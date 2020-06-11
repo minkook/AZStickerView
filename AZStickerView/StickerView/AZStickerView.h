@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-static const CGFloat ModelViewControlDefaultSizeWidth = 25.0;
-static const CGFloat ModelViewControlDefaultSizeHieght = 25.0;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AZStickerView : UIView

@@ -51,6 +51,9 @@
 static const CGFloat ModelViewContentsMinimumSizeWidth = 60.0;
 static const CGFloat ModelViewContentsMinimumSizeHeight = 60.0;
 
+static const CGFloat StickerControlSizeWidth = 25.0;
+static const CGFloat StickerControlSizeHieght = 25.0;
+
 static const CGFloat StickerDefaultSizeWidth = 104.0;
 static const CGFloat StickerDefaultSizeHieght = 104.0;
 
@@ -62,19 +65,6 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     self = [super initWithFrame:frame];
     
     if (self) {
-        
-        
-        ///~~~~~~~~~~~~~~~~~~
-        CGFloat x = CGRectGetMidX(self.bounds) - (StickerDefaultSizeWidth / 2);
-        CGFloat y = CGRectGetMidY(self.bounds) - (StickerDefaultSizeHieght / 2);
-        
-        CGRect rect = CGRectMake(x, y, StickerDefaultSizeWidth, StickerDefaultSizeHieght);
-        
-        self.frame = rect;
-        
-        self.originBounds = self.bounds;
-        ///~~~~~~~~~~~~~~~~~~
-        
         
         [self.layer addSublayer:self.borderLayer];
         
@@ -90,19 +80,34 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         self.panMoveGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveGesture:)];
         [self addGestureRecognizer:self.panMoveGesture];
         
-        self.resizeAndRotateView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_crop_control"]];
+        self.resizeAndRotateView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"rotate.right"]];
+        self.resizeAndRotateView.tintColor = UIColor.darkGrayColor;
         self.resizeAndRotateView.userInteractionEnabled = YES;
         [self addSubview:self.resizeAndRotateView];
         self.panResizeGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(resizeAndRotateGesture:)];
         [self.resizeAndRotateView addGestureRecognizer:self.panResizeGesture];
         
-        self.deleteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_crop_delete"]];
+        self.deleteView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"multiply.circle.fill"]];
+        self.deleteView.tintColor = UIColor.darkGrayColor;
         self.deleteView.userInteractionEnabled = YES;
         [self addSubview:self.deleteView];
         self.tapDeleteGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteTapGesture:)];
         [self.deleteView addGestureRecognizer:self.tapDeleteGesture];
         
-//        [self setEditMode:NO];
+        [self setEditMode:NO];
+        
+        
+        ///~~~~~~~~~~~~~~~~~~
+        CGFloat x = CGRectGetMidX(self.bounds) - (StickerDefaultSizeWidth / 2);
+        CGFloat y = CGRectGetMidY(self.bounds) - (StickerDefaultSizeHieght / 2);
+        
+        CGRect rect = CGRectMake(x, y, StickerDefaultSizeWidth, StickerDefaultSizeHieght);
+        
+        self.frame = rect;
+        
+        self.originBounds = self.bounds;
+        ///~~~~~~~~~~~~~~~~~~
+        
         
     }
     
@@ -119,10 +124,6 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     if (!_borderLayer) {
         
         _borderLayer = [CAShapeLayer layer];
-//        _borderLayer.lineWidth = 3.0f;
-//        _borderLayer.strokeColor = [UIColor whiteColor].CGColor;
-//        _borderLayer.fillColor = [UIColor clearColor].CGColor;
-        
         _borderLayer.lineWidth = 1.0f;
         _borderLayer.lineDashPattern = @[@(4.0f), @(4.0f)];
         _borderLayer.strokeColor = [UIColor redColor].CGColor;
@@ -131,6 +132,32 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     }
     
     return _borderLayer;
+    
+}
+
+- (void)setEditMode:(BOOL)isEditMode {
+    
+    // 선택 전
+#warning !
+//    if (self._willChangeEditMode) {
+//        self._willChangeEditMode(isEditMode);
+//    }
+    
+    _editMode = isEditMode;
+    
+    
+    // 선택 후
+#warning !
+//    if (!self.allwaysShowBorderLayer) {
+//        self.borderLayer.hidden = !isEditMode;
+//    }
+    
+    self.deleteView.hidden = !isEditMode;
+    self.resizeAndRotateView.hidden = !isEditMode;
+    
+//    if (self._didChangeEditMode) {
+//        self._didChangeEditMode(isEditMode);
+//    }
     
 }
 
@@ -171,17 +198,17 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         CGFloat x = CGRectGetMinX(self.bounds);
         CGFloat y = CGRectGetMinY(self.bounds);
         
-        self.deleteView.frame = CGRectMake(x, y, ModelViewControlDefaultSizeWidth, ModelViewControlDefaultSizeHieght);
+        self.deleteView.frame = CGRectMake(x, y, StickerControlSizeWidth, StickerControlSizeHieght);
         
         [self bringSubviewToFront:self.deleteView];
     }
     
     // ResizeAndRotate
     {
-        CGFloat x = CGRectGetMaxX(self.bounds) - ModelViewControlDefaultSizeWidth;
-        CGFloat y = CGRectGetMaxY(self.bounds) - ModelViewControlDefaultSizeHieght;
+        CGFloat x = CGRectGetMaxX(self.bounds) - StickerControlSizeWidth;
+        CGFloat y = CGRectGetMaxY(self.bounds) - StickerControlSizeHieght;
         
-        self.resizeAndRotateView.frame = CGRectMake(x, y, ModelViewControlDefaultSizeWidth, ModelViewControlDefaultSizeHieght);
+        self.resizeAndRotateView.frame = CGRectMake(x, y, StickerControlSizeWidth, StickerControlSizeHieght);
         
         [self bringSubviewToFront:self.resizeAndRotateView];
     }
@@ -189,7 +216,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 }
 
 - (CGRect)drawBounds {
-    return CGRectInset(self.bounds, ModelViewControlDefaultSizeWidth / 2, ModelViewControlDefaultSizeHieght / 2);
+    return CGRectInset(self.bounds, StickerControlSizeWidth / 2, StickerControlSizeHieght / 2);
 }
 
 
@@ -366,6 +393,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 
 - (void)deleteTapGesture:(UITapGestureRecognizer *)recognizer {
     
+#warning !
 //    if (self._didSelectDelete) {
 //        self._didSelectDelete ();
 //    }
