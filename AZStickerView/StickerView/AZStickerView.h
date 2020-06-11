@@ -14,10 +14,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 삭제 콜백 블록. (removeFromSuperview)
+ default is NO.
+ When editMode is activated, the BorderLayer and control function are shown.
+ TapGesture changes to YES.
+ */
+@property (nonatomic, assign) BOOL editMode;
+
+
+/**
+ Change EditMode Callback Block. (removeFromSuperview)
+ */
+@property (nonatomic, copy) void (^willChangeEditModeHandler)(BOOL editMode);
+@property (nonatomic, copy) void (^didChangeEditModeHandler)(BOOL editMode);
+
+
+/**
+ Remove Callback Block. (removeFromSuperview)
  */
 @property (nonatomic, copy) void (^willRemoveHandler)(void);
 @property (nonatomic, copy) void (^didRemoveHandler)(void);
+
 
 @end
 

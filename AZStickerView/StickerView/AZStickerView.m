@@ -22,7 +22,7 @@
 @property (nonatomic, strong) UIPanGestureRecognizer *panResizeGesture;
 @property (nonatomic, strong) UITapGestureRecognizer *tapDeleteGesture;
 
-//Touch 임시 변수
+// Touch
 @property (nonatomic, assign) CGRect touchBeganBounds;
 @property (nonatomic, assign) CGPoint touchBeganLocation;
 @property (nonatomic, assign) CGAffineTransform touchBeganTransform;
@@ -32,16 +32,6 @@
 @property (nonatomic, assign) CGFloat touchBeganDistance;
 
 
-/*
- * 편집 모드 - On / off (기본값 NO)
- * 편집모드: Border와 컨트롤버튼들이 나타남.
- */
-@property (nonatomic, assign) BOOL editMode;
-
-
-/*
- * 뷰 처음 생성시 기본 크기
- */
 @property (nonatomic, assign) CGRect originBounds;
 
 
@@ -80,7 +70,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         self.panMoveGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveGesture:)];
         [self addGestureRecognizer:self.panMoveGesture];
         
-        self.resizeAndRotateView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"rotate.right"]];
+        self.resizeAndRotateView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"arrow.clockwise.circle"]];
         self.resizeAndRotateView.tintColor = UIColor.darkGrayColor;
         self.resizeAndRotateView.userInteractionEnabled = YES;
         [self addSubview:self.resizeAndRotateView];
@@ -137,27 +127,18 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 
 - (void)setEditMode:(BOOL)isEditMode {
     
-    // 선택 전
-#warning !
-//    if (self._willChangeEditMode) {
-//        self._willChangeEditMode(isEditMode);
-//    }
+    if (self.willChangeEditModeHandler) {
+        self.willChangeEditModeHandler(isEditMode);
+    }
     
     _editMode = isEditMode;
-    
-    
-    // 선택 후
-#warning !
-//    if (!self.allwaysShowBorderLayer) {
-//        self.borderLayer.hidden = !isEditMode;
-//    }
     
     self.deleteView.hidden = !isEditMode;
     self.resizeAndRotateView.hidden = !isEditMode;
     
-//    if (self._didChangeEditMode) {
-//        self._didChangeEditMode(isEditMode);
-//    }
+    if (self.didChangeEditModeHandler) {
+        self.didChangeEditModeHandler(isEditMode);
+    }
     
 }
 
@@ -181,7 +162,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 
 - (void)updateSubViews {
     
-    // 최초 크기를 저장 해 둔다.
+    // Save OriginBounds
     if (CGRectEqualToRect(self.originBounds, CGRectZero) &&
         !CGRectEqualToRect(self.bounds, CGRectZero)) {
         self.originBounds = self.bounds;
@@ -273,7 +254,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         dx += self.touchBeganTranslateTx;
         dy += self.touchBeganTranslateTy;
         
-        // 영역 제한
+        // Area Limit
         {
             CGFloat superViewWidth = CGRectGetWidth(self.superview.bounds);
             CGFloat superViewHeight = CGRectGetHeight(self.superview.bounds);
@@ -356,7 +337,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         bounds.size.width += (distance * ratio);
         bounds.size.height += distance;
         
-        // 최소값
+        // Min
         if (bounds.size.width < ModelViewContentsMinimumSizeWidth) {
             bounds.size.width = ModelViewContentsMinimumSizeWidth;
             bounds.size.height = ModelViewContentsMinimumSizeWidth / ratio;
