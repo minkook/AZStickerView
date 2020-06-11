@@ -393,10 +393,15 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 
 - (void)deleteTapGesture:(UITapGestureRecognizer *)recognizer {
     
-#warning !
-//    if (self._didSelectDelete) {
-//        self._didSelectDelete ();
-//    }
+    if (self.willRemoveHandler) {
+        self.willRemoveHandler ();
+    }
+    
+    [self removeFromSuperview];
+    
+    if (self.didRemoveHandler) {
+        self.didRemoveHandler ();
+    }
     
 }
 
