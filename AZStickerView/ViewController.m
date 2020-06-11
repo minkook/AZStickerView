@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "AZStickerView.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) IBOutlet UIView *playgroundView;
 
 @end
 
@@ -16,7 +19,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    
+}
+
+
+#pragma mark - Button Action
+
+- (IBAction)addButtonAction:(UIButton *)sender {
+    
+    AZStickerView *stickerView = [[AZStickerView alloc] initWithFrame:self.playgroundView.bounds];
+    
+    [self.playgroundView addSubview:stickerView];
+    
 }
 
 

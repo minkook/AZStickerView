@@ -14,6 +14,7 @@
 		4DF4FF932491BCB500BCC75B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4FF922491BCB500BCC75B /* Assets.xcassets */; };
 		4DF4FF962491BCB500BCC75B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4FF942491BCB500BCC75B /* LaunchScreen.storyboard */; };
 		4DF4FF992491BCB500BCC75B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4FF982491BCB500BCC75B /* main.m */; };
+		4DF4FFA22491BDAA00BCC75B /* AZStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4FFA12491BDAA00BCC75B /* AZStickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		4DF4FF952491BCB500BCC75B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DF4FF972491BCB500BCC75B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DF4FF982491BCB500BCC75B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4DF4FFA02491BDAA00BCC75B /* AZStickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZStickerView.h; sourceTree = "<group>"; };
+		4DF4FFA12491BDAA00BCC75B /* AZStickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZStickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,7 @@
 		4DF4FF852491BCB400BCC75B /* AZStickerView */ = {
 			isa = PBXGroup;
 			children = (
+				4DF4FF9F2491BD4100BCC75B /* StickerView */,
 				4DF4FF862491BCB400BCC75B /* AppDelegate.h */,
 				4DF4FF872491BCB400BCC75B /* AppDelegate.m */,
 				4DF4FF892491BCB400BCC75B /* SceneDelegate.h */,
@@ -74,6 +78,15 @@
 				4DF4FF982491BCB500BCC75B /* main.m */,
 			);
 			path = AZStickerView;
+			sourceTree = "<group>";
+		};
+		4DF4FF9F2491BD4100BCC75B /* StickerView */ = {
+			isa = PBXGroup;
+			children = (
+				4DF4FFA02491BDAA00BCC75B /* AZStickerView.h */,
+				4DF4FFA12491BDAA00BCC75B /* AZStickerView.m */,
+			);
+			path = StickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +161,7 @@
 			files = (
 				4DF4FF8E2491BCB400BCC75B /* ViewController.m in Sources */,
 				4DF4FF882491BCB400BCC75B /* AppDelegate.m in Sources */,
+				4DF4FFA22491BDAA00BCC75B /* AZStickerView.m in Sources */,
 				4DF4FF992491BCB500BCC75B /* main.m in Sources */,
 				4DF4FF8B2491BCB400BCC75B /* SceneDelegate.m in Sources */,
 			);
