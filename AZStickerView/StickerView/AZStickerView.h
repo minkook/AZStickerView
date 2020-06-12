@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithCoder:(NSCoder *)coder NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype)initWithParentBounds:(CGRect)parentBounds;
+- (instancetype)initWithParentBounds:(CGRect)parentBounds stickerImage:(UIImage *)stickerImage;
+
+
+@property (nonatomic, strong) UIImage *stickerImage;
 
 
 /**

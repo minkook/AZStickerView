@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) IBOutlet UIView *playgroundView;
 
+@property (nonatomic, strong) AZStickerView *stickerView;
+
 @end
 
 @implementation ViewController
@@ -27,8 +29,20 @@
 - (IBAction)addButtonAction:(UIButton *)sender {
     
     AZStickerView *stickerView = [[AZStickerView alloc] initWithParentBounds:self.playgroundView.bounds];
+    stickerView.stickerImage = [UIImage systemImageNamed:@"tortoise"];
     
     [self.playgroundView addSubview:stickerView];
+    
+    self.stickerView = stickerView;
+    
+}
+
+- (IBAction)lastStickerChangeImageButtonAction:(UIButton *)sender {
+    
+    if (self.stickerView) {
+        UIImage *image = [UIImage systemImageNamed:@"tortoise.fill"];
+        self.stickerView.stickerImage = image;
+    }
     
 }
 

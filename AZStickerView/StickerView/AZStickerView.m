@@ -13,9 +13,14 @@
 
 @property (nonatomic, strong) CAShapeLayer *borderLayer;
 
+// Sticker
+@property (nonatomic, strong) UIImageView *stickerImageView;
+
+// Controls
 @property (nonatomic, strong) UIImageView *deleteView;
 @property (nonatomic, strong) UIImageView *resizeAndRotateView;
 
+// Gesture
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTapGesture;
 @property (nonatomic, strong) UIPanGestureRecognizer *panMoveGesture;
@@ -31,9 +36,8 @@
 @property (nonatomic, assign) CGFloat touchBeganTranslateTy;
 @property (nonatomic, assign) CGFloat touchBeganDistance;
 
-
+//
 @property (nonatomic, assign) CGRect parentBounds;
-
 @property (nonatomic, assign) CGRect originBounds;
 
 
@@ -60,34 +64,10 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         
         [self.layer addSublayer:self.borderLayer];
         
-        self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
-        [self addGestureRecognizer:self.tapGesture];
-        
-        self.doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapGesture:)];
-        self.doubleTapGesture.numberOfTapsRequired = 2;
-        [self addGestureRecognizer:self.doubleTapGesture];
-        
-        [self.tapGesture requireGestureRecognizerToFail:self.doubleTapGesture];
-        
-        self.panMoveGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveGesture:)];
-        [self addGestureRecognizer:self.panMoveGesture];
-        
-        self.resizeAndRotateView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"arrow.clockwise.circle"]];
-        self.resizeAndRotateView.tintColor = UIColor.darkGrayColor;
-        self.resizeAndRotateView.userInteractionEnabled = YES;
-        [self addSubview:self.resizeAndRotateView];
-        self.panResizeGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(resizeAndRotateGesture:)];
-        [self.resizeAndRotateView addGestureRecognizer:self.panResizeGesture];
-        
-        self.deleteView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"multiply.circle.fill"]];
-        self.deleteView.tintColor = UIColor.darkGrayColor;
-        self.deleteView.userInteractionEnabled = YES;
-        [self addSubview:self.deleteView];
-        self.tapDeleteGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteTapGesture:)];
-        [self.deleteView addGestureRecognizer:self.tapDeleteGesture];
+        [self initGesture];
+        [self initControls];
         
         [self setEditMode:NO];
-        
         
         ///~~~~~~~~~~~~~~~~~~
         CGFloat x = CGRectGetMidX(parentBounds) - (StickerDefaultSizeWidth / 2);
@@ -100,10 +80,57 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         self.originBounds = self.bounds;
         ///~~~~~~~~~~~~~~~~~~
         
-        
     }
     
     return self;
+    
+}
+
+- (instancetype)initWithParentBounds:(CGRect)parentBounds stickerImage:(UIImage *)stickerImage {
+    
+    self = [self initWithParentBounds:parentBounds];
+    if (self) {
+        self.stickerImage = stickerImage;
+    }
+    
+    return self;
+    
+}
+
+
+#pragma mark - Init
+
+- (void)initGesture {
+    
+    self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
+    [self addGestureRecognizer:self.tapGesture];
+    
+    self.doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapGesture:)];
+    self.doubleTapGesture.numberOfTapsRequired = 2;
+    [self addGestureRecognizer:self.doubleTapGesture];
+    
+    [self.tapGesture requireGestureRecognizerToFail:self.doubleTapGesture];
+    
+    self.panMoveGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveGesture:)];
+    [self addGestureRecognizer:self.panMoveGesture];
+    
+}
+
+- (void)initControls {
+    
+    self.resizeAndRotateView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"arrow.clockwise.circle"]];
+    self.resizeAndRotateView.tintColor = UIColor.darkGrayColor;
+    self.resizeAndRotateView.userInteractionEnabled = YES;
+    [self addSubview:self.resizeAndRotateView];
+    self.panResizeGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(resizeAndRotateGesture:)];
+    [self.resizeAndRotateView addGestureRecognizer:self.panResizeGesture];
+    
+    self.deleteView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"multiply.circle.fill"]];
+    self.deleteView.tintColor = UIColor.darkGrayColor;
+    self.deleteView.userInteractionEnabled = YES;
+    [self addSubview:self.deleteView];
+    self.tapDeleteGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteTapGesture:)];
+    [self.deleteView addGestureRecognizer:self.tapDeleteGesture];
     
 }
 
@@ -125,6 +152,24 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     
     return _borderLayer;
     
+}
+
+- (UIImageView *)stickerImageView {
+    
+    if (!_stickerImageView) {
+        _stickerImageView = [[UIImageView alloc] init];
+        _stickerImageView.contentMode = UIViewContentModeScaleAspectFit;
+        [self addSubview:_stickerImageView];
+        [self updateSubViews];
+    }
+    
+    return _stickerImageView;
+    
+}
+
+- (void)setStickerImage:(UIImage *)stickerImage {
+    _stickerImage = stickerImage;
+    self.stickerImageView.image = stickerImage;
 }
 
 - (void)setEditMode:(BOOL)isEditMode {
@@ -194,6 +239,10 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         self.resizeAndRotateView.frame = CGRectMake(x, y, StickerControlSizeWidth, StickerControlSizeHieght);
         
         [self bringSubviewToFront:self.resizeAndRotateView];
+    }
+    
+    if (self.stickerImage) {
+        self.stickerImageView.frame = [self drawBounds];
     }
     
 }

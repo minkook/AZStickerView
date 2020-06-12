@@ -25,6 +25,13 @@
                                             <action selector="addButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lp9-z3-v2Y"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEe-Sw-h8T">
+                                        <rect key="frame" x="201" y="0.0" width="99" height="40"/>
+                                        <state key="normal" title="Change Image"/>
+                                        <connections>
+                                            <action selector="lastStickerChangeImageButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Bx-kz-yR9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -32,6 +39,9 @@
                                     <constraint firstAttribute="height" constant="40" id="EU9-Gl-DcU"/>
                                     <constraint firstItem="bcf-nD-0ey" firstAttribute="top" secondItem="tkZ-4f-h4D" secondAttribute="top" id="KaH-ch-8kQ"/>
                                     <constraint firstAttribute="trailing" secondItem="bcf-nD-0ey" secondAttribute="trailing" constant="15" id="MgJ-I2-MK4"/>
+                                    <constraint firstItem="bcf-nD-0ey" firstAttribute="leading" secondItem="aEe-Sw-h8T" secondAttribute="trailing" constant="20" id="W9R-W1-h9e"/>
+                                    <constraint firstAttribute="bottom" secondItem="aEe-Sw-h8T" secondAttribute="bottom" id="XRX-Dc-gBy"/>
+                                    <constraint firstItem="aEe-Sw-h8T" firstAttribute="top" secondItem="tkZ-4f-h4D" secondAttribute="top" id="zqg-tG-nhH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meb-1F-J7o">
