@@ -32,6 +32,8 @@
 @property (nonatomic, assign) CGFloat touchBeganDistance;
 
 
+@property (nonatomic, assign) CGRect parentBounds;
+
 @property (nonatomic, assign) CGRect originBounds;
 
 
@@ -50,9 +52,9 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 
 @implementation AZStickerView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithParentBounds:(CGRect)parentBounds {
     
-    self = [super initWithFrame:frame];
+    self = [super init];
     
     if (self) {
         
@@ -88,13 +90,13 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         
         
         ///~~~~~~~~~~~~~~~~~~
-        CGFloat x = CGRectGetMidX(self.bounds) - (StickerDefaultSizeWidth / 2);
-        CGFloat y = CGRectGetMidY(self.bounds) - (StickerDefaultSizeHieght / 2);
+        CGFloat x = CGRectGetMidX(parentBounds) - (StickerDefaultSizeWidth / 2);
+        CGFloat y = CGRectGetMidY(parentBounds) - (StickerDefaultSizeHieght / 2);
         
         CGRect rect = CGRectMake(x, y, StickerDefaultSizeWidth, StickerDefaultSizeHieght);
-        
         self.frame = rect;
         
+        self.parentBounds = parentBounds;
         self.originBounds = self.bounds;
         ///~~~~~~~~~~~~~~~~~~
         
@@ -256,8 +258,8 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         
         // Area Limit
         {
-            CGFloat superViewWidth = CGRectGetWidth(self.superview.bounds);
-            CGFloat superViewHeight = CGRectGetHeight(self.superview.bounds);
+            CGFloat superViewWidth = CGRectGetWidth(self.parentBounds);
+            CGFloat superViewHeight = CGRectGetHeight(self.parentBounds);
             
             // Left
             if (dx < -1 * superViewWidth / 2) {

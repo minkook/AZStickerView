@@ -26,7 +26,7 @@
 
 - (IBAction)addButtonAction:(UIButton *)sender {
     
-    AZStickerView *stickerView = [[AZStickerView alloc] initWithFrame:self.playgroundView.bounds];
+    AZStickerView *stickerView = [[AZStickerView alloc] initWithParentBounds:self.playgroundView.bounds];
     
     [self.playgroundView addSubview:stickerView];
     

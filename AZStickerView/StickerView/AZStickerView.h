@@ -13,6 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AZStickerView : UIView
 
 
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)coder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype)initWithParentBounds:(CGRect)parentBounds;
+
+
 /**
  default is NO.
  When editMode is activated, the BorderLayer and control function are shown.
