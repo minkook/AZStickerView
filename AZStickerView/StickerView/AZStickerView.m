@@ -202,6 +202,10 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     
 }
 
+- (CGRect)drawBounds {
+    return CGRectInset(self.bounds, StickerControlSizeWidth / 2, StickerControlSizeHieght / 2);
+}
+
 
 
 #pragma mark - Override
@@ -258,10 +262,6 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         self.stickerImageView.frame = [self drawBounds];
     }
     
-}
-
-- (CGRect)drawBounds {
-    return CGRectInset(self.bounds, StickerControlSizeWidth / 2, StickerControlSizeHieght / 2);
 }
 
 

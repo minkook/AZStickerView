@@ -20,7 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithParentBounds:(CGRect)parentBounds stickerImage:(UIImage *)stickerImage;
 
 
-@property (nonatomic, strong) UIImage *stickerImage;
+/**
+ * default is nil.
+ */
+@property (nonatomic, strong, nullable) UIImage *stickerImage;
 
 
 /**
@@ -29,6 +32,12 @@ NS_ASSUME_NONNULL_BEGIN
  TapGesture changes to YES.
  */
 @property (nonatomic, assign) BOOL editMode;
+
+
+/**
+ * View bounds Inset (StickerControlSize / 2).
+ */
+@property (nonatomic, assign, readonly) CGRect drawBounds;
 
 
 /**
