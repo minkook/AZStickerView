@@ -14,7 +14,7 @@
 @property (nonatomic, strong) CAShapeLayer *borderLayer;
 
 // Sticker
-@property (nonatomic, strong) UIImageView *stickerImageView;
+@property (nonatomic, strong, nullable) UIImageView *stickerImageView;
 
 // Controls
 @property (nonatomic, strong) UIImageView *deleteView;
@@ -134,6 +134,14 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     
 }
 
+- (void)initStickerImageView {
+    
+    self.stickerImageView = [[UIImageView alloc] init];
+    self.stickerImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self addSubview:_stickerImageView];
+    [self updateSubViews];
+    
+}
 
 
 #pragma mark - Property
@@ -154,22 +162,27 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     
 }
 
-- (UIImageView *)stickerImageView {
+- (void)setStickerImage:(UIImage *)stickerImage {
     
-    if (!_stickerImageView) {
-        _stickerImageView = [[UIImageView alloc] init];
-        _stickerImageView.contentMode = UIViewContentModeScaleAspectFit;
-        [self addSubview:_stickerImageView];
-        [self updateSubViews];
+    _stickerImage = stickerImage;
+    
+    if (stickerImage) {
+        
+        if (!self.stickerImageView) {
+            [self initStickerImageView];
+        }
+        
+        self.stickerImageView.image = stickerImage;
+    }
+    else {
+        
+        if (self.stickerImageView) {
+            [self.stickerImageView removeFromSuperview];
+            self.stickerImageView = nil;
+        }
+        
     }
     
-    return _stickerImageView;
-    
-}
-
-- (void)setStickerImage:(UIImage *)stickerImage {
-    _stickerImage = stickerImage;
-    self.stickerImageView.image = stickerImage;
 }
 
 - (void)setEditMode:(BOOL)isEditMode {
@@ -241,7 +254,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         [self bringSubviewToFront:self.resizeAndRotateView];
     }
     
-    if (self.stickerImage) {
+    if (self.stickerImageView) {
         self.stickerImageView.frame = [self drawBounds];
     }
     
