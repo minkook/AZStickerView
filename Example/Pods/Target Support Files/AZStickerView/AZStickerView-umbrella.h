@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "AZStickerView.h"
 
 FOUNDATION_EXPORT double AZStickerViewVersionNumber;
 FOUNDATION_EXPORT const unsigned char AZStickerViewVersionString[];
