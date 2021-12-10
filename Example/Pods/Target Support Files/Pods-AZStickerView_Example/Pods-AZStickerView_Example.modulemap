@@ -1,0 +1,6 @@
+framework module Pods_AZStickerView_Example {
+  umbrella header "Pods-AZStickerView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

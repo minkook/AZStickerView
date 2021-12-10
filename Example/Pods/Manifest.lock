@@ -1,0 +1,16 @@
+PODS:
+  - AZStickerView (0.1.0)
+
+DEPENDENCIES:
+  - AZStickerView (from `../`)
+
+EXTERNAL SOURCES:
+  AZStickerView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AZStickerView: 63901d62f0fd80e1f70f51d62b39e6e4ed6a97fa
+
+PODFILE CHECKSUM: 050322aea9e4fe31aac9e8a8bc0a8db7bf3b1e5c
+
+COCOAPODS: 1.11.2

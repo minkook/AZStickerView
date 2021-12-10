@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A269DE4D0F982D004751881 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0A269DE4D0F982D004751881 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		118EC71794F711E1F1D18AEC /* Pods-AZStickerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AZStickerView_Example.release.xcconfig"; path = "Target Support Files/Pods-AZStickerView_Example/Pods-AZStickerView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		2006D77BF22ED7CE41704259 /* Pods-AZStickerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AZStickerView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AZStickerView_Tests/Pods-AZStickerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2334BA5C465C5A58B9E5F481 /* Pods_AZStickerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AZStickerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,8 +65,8 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CED527ECF81E8E36F39FED2D /* Pods-AZStickerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AZStickerView_Tests.release.xcconfig"; path = "Target Support Files/Pods-AZStickerView_Tests/Pods-AZStickerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DB0A52FCF845EB3A3048AB17 /* Pods-AZStickerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AZStickerView_Example.debug.xcconfig"; path = "Target Support Files/Pods-AZStickerView_Example/Pods-AZStickerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		EE6BA20011869963799E690F /* AZStickerView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = AZStickerView.podspec; path = ../AZStickerView.podspec; sourceTree = "<group>"; };
-		EFEE132E9D743B980C728790 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		EE6BA20011869963799E690F /* AZStickerView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AZStickerView.podspec; path = ../AZStickerView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EFEE132E9D743B980C728790 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,6 @@
 				2006D77BF22ED7CE41704259 /* Pods-AZStickerView_Tests.debug.xcconfig */,
 				CED527ECF81E8E36F39FED2D /* Pods-AZStickerView_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

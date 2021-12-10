@@ -1,0 +1,6 @@
+framework module AZStickerView {
+  umbrella header "AZStickerView-umbrella.h"
+
+  export *
+  module * { export * }
+}
