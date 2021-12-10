@@ -40,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) CGRect drawBounds;
 
 
+- (void)remove;
+
+
 /**
  Change EditMode Callback Block. (removeFromSuperview)
  */

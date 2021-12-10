@@ -7,28 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D4EBD209696ECB939CCF5AC5CEBFC58 /* AZStickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C79AF69F3383E6D1679F7284302D9BB /* AZStickerView-dummy.m */; };
+		0BF038DCABB62010C1A6FEE864E1251A /* AZStickerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B8567B9A2D46C03A6E62C22DDD7DFA4 /* AZStickerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B2B19889F4B3E002818B918FC665860 /* AZStickerManagerDataSouce.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ADE9378814B1EE9F668F84EAF4A639A /* AZStickerManagerDataSouce.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28A94D648A5A8CFAB319D6AAE5C62B58 /* Pods-AZStickerView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FF13FDAB4D82061866A8722B52C0313 /* Pods-AZStickerView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4633DA1FB535BE4C940B2ED47C4FC20B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		49C08769B818B53F3D7912623D11AAD9 /* AZStickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FFDC26FB85DC0C8CC7FE682D7CB753 /* AZStickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CF28A0D8C5B7942AE41C74918AFA66A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		5C61041729215B48E674FD5F6EA58AB3 /* Pods-AZStickerView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 447600A4FA41C1B190C4BE1C08B739C0 /* Pods-AZStickerView_Tests-dummy.m */; };
-		633A5DDF4137EA4D6F61D1C3E8D58055 /* AZStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E215CCE2D8358C39C14F0F490CCEDF /* AZStickerView.m */; };
-		72B09AB3273E8B33CF138A101D93277F /* AZStickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A613A374119679B25082A51D3F4F5A2 /* AZStickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8095B85AB04EA1B9D3B9FFFAFB406F4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		BDDA559089D5DD2E740F3C509E58AE8E /* AZStickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EB4BEEFF20DB79A19364AE9BF2FC303 /* AZStickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62E7F10B8C9B80C437544549655F978D /* AZStickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CED6866ECBFE2B90E7E8EDA8389340D /* AZStickerManager.m */; };
+		ABFE8266BACE30CB9F143A0EC520C669 /* AZStickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C9E582AD47786ABAE13B870CF0E068 /* AZStickerView-dummy.m */; };
+		ADCD1043DD233A00D7B465BC3BFF6BC8 /* AZStickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B843F52EDDA4BB5F048BB3AE4A626E8F /* AZStickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEBBF6C2C41ECCF4BF42F6DCFF4E09EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		C7E550B61B6EF30C7DACB8B08F18A8DC /* Pods-AZStickerView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF955A492D6449BD99C5EC4877CB4D2E /* Pods-AZStickerView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCC48A955179B725EA54DCE9B0200DF0 /* Pods-AZStickerView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB92905409D6EA39CC9CE9597C27C68E /* Pods-AZStickerView_Example-dummy.m */; };
+		EE356BD0A23893D7E9CE1460CBF7C4DC /* AZStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B33547766400D5B77FEAF8DABA52B32 /* AZStickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D6F4871C7A8BA023CA6E2B3B643E088E /* PBXContainerItemProxy */ = {
+		1ADB46977D0800498F1979DEDBC9646C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B91FE99EA66C4CC57D212A24D878D1D6;
 			remoteInfo = "Pods-AZStickerView_Example";
 		};
-		D7B4A5C30F283FDB9A9C2710F9076E12 /* PBXContainerItemProxy */ = {
+		3D3C0D1AC3E0C8961040CFAA520DA2A7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -38,40 +41,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		023D3357C5425B5DA72C8E7E56E6DA4B /* AZStickerView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AZStickerView.debug.xcconfig; sourceTree = "<group>"; };
-		04E215CCE2D8358C39C14F0F490CCEDF /* AZStickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZStickerView.m; path = AZStickerView/Classes/AZStickerView.m; sourceTree = "<group>"; };
+		00C9E582AD47786ABAE13B870CF0E068 /* AZStickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AZStickerView-dummy.m"; sourceTree = "<group>"; };
+		03FFDC26FB85DC0C8CC7FE682D7CB753 /* AZStickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZStickerView.h; path = AZStickerView/Classes/AZStickerView.h; sourceTree = "<group>"; };
 		0AACA0362CB4EE76E94531B75BE749B6 /* Pods-AZStickerView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AZStickerView_Tests.modulemap"; sourceTree = "<group>"; };
-		0EB4BEEFF20DB79A19364AE9BF2FC303 /* AZStickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AZStickerView-umbrella.h"; sourceTree = "<group>"; };
+		0AD809269837BC5A67BDA76308AADC6D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		0B8567B9A2D46C03A6E62C22DDD7DFA4 /* AZStickerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZStickerManager.h; path = AZStickerView/Classes/AZStickerManager.h; sourceTree = "<group>"; };
 		0FF13FDAB4D82061866A8722B52C0313 /* Pods-AZStickerView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AZStickerView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		11A96027E30BE4493958928918773BBD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		11C598C80EBF9C45A54CE29631135693 /* Pods-AZStickerView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AZStickerView_Example-Info.plist"; sourceTree = "<group>"; };
 		1528FCE92CB21B04881434CD34676B1D /* Pods-AZStickerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AZStickerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		2034434090CB2C72A9DA31A26A4EB367 /* AZStickerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AZStickerView-Info.plist"; sourceTree = "<group>"; };
+		2ADE9378814B1EE9F668F84EAF4A639A /* AZStickerManagerDataSouce.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZStickerManagerDataSouce.h; path = AZStickerView/Classes/AZStickerManagerDataSouce.h; sourceTree = "<group>"; };
+		2CED6866ECBFE2B90E7E8EDA8389340D /* AZStickerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZStickerManager.m; path = AZStickerView/Classes/AZStickerManager.m; sourceTree = "<group>"; };
+		2F8A3A9AE842FA3CCE5C9F0A69A50D10 /* AZStickerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AZStickerView-Info.plist"; sourceTree = "<group>"; };
+		31D386EC3C42D7A4284658D09B395D62 /* AZStickerView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AZStickerView.debug.xcconfig; sourceTree = "<group>"; };
+		3B33547766400D5B77FEAF8DABA52B32 /* AZStickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZStickerView.m; path = AZStickerView/Classes/AZStickerView.m; sourceTree = "<group>"; };
+		4196EE33D8418594F8978FDC520A8EF4 /* AZStickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AZStickerView.modulemap; sourceTree = "<group>"; };
 		41EBD43A9301DD74E9A642458C3A8528 /* Pods-AZStickerView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AZStickerView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		447600A4FA41C1B190C4BE1C08B739C0 /* Pods-AZStickerView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AZStickerView_Tests-dummy.m"; sourceTree = "<group>"; };
-		4A613A374119679B25082A51D3F4F5A2 /* AZStickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZStickerView.h; path = AZStickerView/Classes/AZStickerView.h; sourceTree = "<group>"; };
-		6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AZStickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C782DA814309A51758322F74897D688 /* AZStickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AZStickerView-prefix.pch"; sourceTree = "<group>"; };
-		6DF3A7726501B7C93475C2B14D52F818 /* AZStickerView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AZStickerView.release.xcconfig; sourceTree = "<group>"; };
+		6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AZStickerView; path = AZStickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7611CC88C8DF50DE0AA8298991DF2964 /* Pods-AZStickerView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AZStickerView_Tests-Info.plist"; sourceTree = "<group>"; };
-		770598647BF5D6B7581A5A9F69EBBB41 /* AZStickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AZStickerView.modulemap; sourceTree = "<group>"; };
-		7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods_AZStickerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AZStickerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods-AZStickerView_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AZStickerView_Tests"; path = Pods_AZStickerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD2A4C9411661F5C069EBFF385C57AC /* Pods-AZStickerView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AZStickerView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		83E69E9935E4AE45C2F7E060F5463E12 /* Pods-AZStickerView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AZStickerView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8EE18CFEF28C25F8F58C74A3060D5C7E /* AZStickerView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AZStickerView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8C58DCF7575DA70369A841A9BC0BBD39 /* AZStickerView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AZStickerView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9160AB8CCD099A4F819930027FFCBFBD /* Pods-AZStickerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AZStickerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		9C79AF69F3383E6D1679F7284302D9BB /* AZStickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AZStickerView-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A8BF377599D2E82237F25B08553EACDD /* Pods-AZStickerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AZStickerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD351798AEACF5ECB8C6035E0073B03D /* Pods-AZStickerView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AZStickerView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		AF955A492D6449BD99C5EC4877CB4D2E /* Pods-AZStickerView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AZStickerView_Example-umbrella.h"; sourceTree = "<group>"; };
+		B843F52EDDA4BB5F048BB3AE4A626E8F /* AZStickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AZStickerView-umbrella.h"; sourceTree = "<group>"; };
 		BAFA9FC401F487074E43C7B02F383B58 /* Pods-AZStickerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AZStickerView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BB92905409D6EA39CC9CE9597C27C68E /* Pods-AZStickerView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AZStickerView_Example-dummy.m"; sourceTree = "<group>"; };
 		C104AB13CE98066EEB596CE8807D5448 /* Pods-AZStickerView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AZStickerView_Example.modulemap"; sourceTree = "<group>"; };
 		DF21A30BF073F8583C33698EDD530C8A /* Pods-AZStickerView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AZStickerView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		ECF85C5C10FD96EFCF9DBCE3FD89D902 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		F2BF304821953FDE9F1D85C54467952F /* Pods_AZStickerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AZStickerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF6C8A4416A0800BD5B12B6217B74CB7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E2661B854B8579E54638D1FD56E760DE /* AZStickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AZStickerView-prefix.pch"; sourceTree = "<group>"; };
+		F103FE414EB4CA4D767E0B3DD6EE0087 /* AZStickerView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AZStickerView.release.xcconfig; sourceTree = "<group>"; };
+		F2BF304821953FDE9F1D85C54467952F /* Pods-AZStickerView_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AZStickerView_Example"; path = Pods_AZStickerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +97,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5746EF32F85E46039A95AFE4C6090373 /* Frameworks */ = {
+		B6D76AE1C6878926BBF88089A691DB98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8095B85AB04EA1B9D3B9FFFAFB406F4F /* Foundation.framework in Frameworks */,
+				4CF28A0D8C5B7942AE41C74918AFA66A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,14 +124,6 @@
 			path = "Target Support Files/Pods-AZStickerView_Tests";
 			sourceTree = "<group>";
 		};
-		40729F52144C9DEB8333660F50C35574 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6C14CD132E3ABF8B882BFB37EDB17E21 /* AZStickerView */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,31 +132,27 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		60C3057B755EACDCF787F8CF150823F9 /* Support Files */ = {
+		7A0C04153B2E054F67C742F79E2A13D2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				770598647BF5D6B7581A5A9F69EBBB41 /* AZStickerView.modulemap */,
-				9C79AF69F3383E6D1679F7284302D9BB /* AZStickerView-dummy.m */,
-				2034434090CB2C72A9DA31A26A4EB367 /* AZStickerView-Info.plist */,
-				6C782DA814309A51758322F74897D688 /* AZStickerView-prefix.pch */,
-				0EB4BEEFF20DB79A19364AE9BF2FC303 /* AZStickerView-umbrella.h */,
-				023D3357C5425B5DA72C8E7E56E6DA4B /* AZStickerView.debug.xcconfig */,
-				6DF3A7726501B7C93475C2B14D52F818 /* AZStickerView.release.xcconfig */,
+				4196EE33D8418594F8978FDC520A8EF4 /* AZStickerView.modulemap */,
+				00C9E582AD47786ABAE13B870CF0E068 /* AZStickerView-dummy.m */,
+				2F8A3A9AE842FA3CCE5C9F0A69A50D10 /* AZStickerView-Info.plist */,
+				E2661B854B8579E54638D1FD56E760DE /* AZStickerView-prefix.pch */,
+				B843F52EDDA4BB5F048BB3AE4A626E8F /* AZStickerView-umbrella.h */,
+				31D386EC3C42D7A4284658D09B395D62 /* AZStickerView.debug.xcconfig */,
+				F103FE414EB4CA4D767E0B3DD6EE0087 /* AZStickerView.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/AZStickerView";
 			sourceTree = "<group>";
 		};
-		6C14CD132E3ABF8B882BFB37EDB17E21 /* AZStickerView */ = {
+		96649604BD9622FB283C0CC0AC4DF112 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4A613A374119679B25082A51D3F4F5A2 /* AZStickerView.h */,
-				04E215CCE2D8358C39C14F0F490CCEDF /* AZStickerView.m */,
-				F71364EFA0E61BC1D1FFEB865284E5AF /* Pod */,
-				60C3057B755EACDCF787F8CF150823F9 /* Support Files */,
+				9B20A61B415062E028B696A0527BB535 /* AZStickerView */,
 			);
-			name = AZStickerView;
-			path = ../..;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		9A63F6324BB398C044864019ED62C397 /* Targets Support Files */ = {
@@ -170,21 +164,46 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		9B20A61B415062E028B696A0527BB535 /* AZStickerView */ = {
+			isa = PBXGroup;
+			children = (
+				0B8567B9A2D46C03A6E62C22DDD7DFA4 /* AZStickerManager.h */,
+				2CED6866ECBFE2B90E7E8EDA8389340D /* AZStickerManager.m */,
+				2ADE9378814B1EE9F668F84EAF4A639A /* AZStickerManagerDataSouce.h */,
+				03FFDC26FB85DC0C8CC7FE682D7CB753 /* AZStickerView.h */,
+				3B33547766400D5B77FEAF8DABA52B32 /* AZStickerView.m */,
+				B67D2348E389209C33CA35E074415B5B /* Pod */,
+				7A0C04153B2E054F67C742F79E2A13D2 /* Support Files */,
+			);
+			name = AZStickerView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		A1D1F61E5920369B7597435BDF774510 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView.framework */,
-				F2BF304821953FDE9F1D85C54467952F /* Pods_AZStickerView_Example.framework */,
-				7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods_AZStickerView_Tests.framework */,
+				6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView */,
+				F2BF304821953FDE9F1D85C54467952F /* Pods-AZStickerView_Example */,
+				7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods-AZStickerView_Tests */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B67D2348E389209C33CA35E074415B5B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				8C58DCF7575DA70369A841A9BC0BBD39 /* AZStickerView.podspec */,
+				DF6C8A4416A0800BD5B12B6217B74CB7 /* LICENSE */,
+				0AD809269837BC5A67BDA76308AADC6D /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				40729F52144C9DEB8333660F50C35574 /* Development Pods */,
+				96649604BD9622FB283C0CC0AC4DF112 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				A1D1F61E5920369B7597435BDF774510 /* Products */,
 				9A63F6324BB398C044864019ED62C397 /* Targets Support Files */,
@@ -197,16 +216,6 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F71364EFA0E61BC1D1FFEB865284E5AF /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				8EE18CFEF28C25F8F58C74A3060D5C7E /* AZStickerView.podspec */,
-				ECF85C5C10FD96EFCF9DBCE3FD89D902 /* LICENSE */,
-				11A96027E30BE4493958928918773BBD /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		FF924F4784EF943FD9683A283A339A32 /* Pods-AZStickerView_Example */ = {
@@ -229,15 +238,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		44D8D52BD6D0D932379E9E5A9F97A5BC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				72B09AB3273E8B33CF138A101D93277F /* AZStickerView.h in Headers */,
-				BDDA559089D5DD2E740F3C509E58AE8E /* AZStickerView-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6F2108C029D0329374D28C8B864A8355 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,17 +254,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		99C95737156F10B2F48FB747DB9D396D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BF038DCABB62010C1A6FEE864E1251A /* AZStickerManager.h in Headers */,
+				1B2B19889F4B3E002818B918FC665860 /* AZStickerManagerDataSouce.h in Headers */,
+				49C08769B818B53F3D7912623D11AAD9 /* AZStickerView.h in Headers */,
+				ADCD1043DD233A00D7B465BC3BFF6BC8 /* AZStickerView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		57579442023924B886D8DB1F08AD14FC /* AZStickerView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 82F3C80610B9C20F3EED352513860094 /* Build configuration list for PBXNativeTarget "AZStickerView" */;
+			buildConfigurationList = 2AFAB0EF300AD8C627319756AA4B8C83 /* Build configuration list for PBXNativeTarget "AZStickerView" */;
 			buildPhases = (
-				44D8D52BD6D0D932379E9E5A9F97A5BC /* Headers */,
-				21F61F8A48F52CB228E7F7989075E6B4 /* Sources */,
-				5746EF32F85E46039A95AFE4C6090373 /* Frameworks */,
-				07E3D0E55F0BB40F477B6EAB2D64B5A0 /* Resources */,
+				99C95737156F10B2F48FB747DB9D396D /* Headers */,
+				3C172B94F13CA9A41ABF55DF7B974E2C /* Sources */,
+				B6D76AE1C6878926BBF88089A691DB98 /* Frameworks */,
+				E210CF31A99960A95D0C9BC28FFB9D5B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -272,7 +283,7 @@
 			);
 			name = AZStickerView;
 			productName = AZStickerView;
-			productReference = 6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView.framework */;
+			productReference = 6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView */;
 			productType = "com.apple.product-type.framework";
 		};
 		B91FE99EA66C4CC57D212A24D878D1D6 /* Pods-AZStickerView_Example */ = {
@@ -287,11 +298,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				E78DB784618B71541F307909D5DC0AA9 /* PBXTargetDependency */,
+				69ED4DC43EDBAF9B87503D73F15F9510 /* PBXTargetDependency */,
 			);
 			name = "Pods-AZStickerView_Example";
 			productName = Pods_AZStickerView_Example;
-			productReference = F2BF304821953FDE9F1D85C54467952F /* Pods_AZStickerView_Example.framework */;
+			productReference = F2BF304821953FDE9F1D85C54467952F /* Pods-AZStickerView_Example */;
 			productType = "com.apple.product-type.framework";
 		};
 		C5D7E5A67AD58372D5D88025BE0401F1 /* Pods-AZStickerView_Tests */ = {
@@ -306,11 +317,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				BA3750CE81C3A324B7FB6ABC1F538745 /* PBXTargetDependency */,
+				8EB6BF9DAD7A6F7E54CDD09E84EC196D /* PBXTargetDependency */,
 			);
 			name = "Pods-AZStickerView_Tests";
 			productName = Pods_AZStickerView_Tests;
-			productReference = 7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods_AZStickerView_Tests.framework */;
+			productReference = 7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods-AZStickerView_Tests */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -320,7 +331,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -343,13 +354,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		07E3D0E55F0BB40F477B6EAB2D64B5A0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5278E9CE79DBC8503C22159D75C2A93B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +362,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BFAFF832C219C4B4775ACB69F6251855 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E210CF31A99960A95D0C9BC28FFB9D5B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -375,12 +386,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		21F61F8A48F52CB228E7F7989075E6B4 /* Sources */ = {
+		3C172B94F13CA9A41ABF55DF7B974E2C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				633A5DDF4137EA4D6F61D1C3E8D58055 /* AZStickerView.m in Sources */,
-				0D4EBD209696ECB939CCF5AC5CEBFC58 /* AZStickerView-dummy.m in Sources */,
+				62E7F10B8C9B80C437544549655F978D /* AZStickerManager.m in Sources */,
+				EE356BD0A23893D7E9CE1460CBF7C4DC /* AZStickerView.m in Sources */,
+				ABFE8266BACE30CB9F143A0EC520C669 /* AZStickerView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,21 +407,51 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BA3750CE81C3A324B7FB6ABC1F538745 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-AZStickerView_Example";
-			target = B91FE99EA66C4CC57D212A24D878D1D6 /* Pods-AZStickerView_Example */;
-			targetProxy = D6F4871C7A8BA023CA6E2B3B643E088E /* PBXContainerItemProxy */;
-		};
-		E78DB784618B71541F307909D5DC0AA9 /* PBXTargetDependency */ = {
+		69ED4DC43EDBAF9B87503D73F15F9510 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AZStickerView;
 			target = 57579442023924B886D8DB1F08AD14FC /* AZStickerView */;
-			targetProxy = D7B4A5C30F283FDB9A9C2710F9076E12 /* PBXContainerItemProxy */;
+			targetProxy = 3D3C0D1AC3E0C8961040CFAA520DA2A7 /* PBXContainerItemProxy */;
+		};
+		8EB6BF9DAD7A6F7E54CDD09E84EC196D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-AZStickerView_Example";
+			target = B91FE99EA66C4CC57D212A24D878D1D6 /* Pods-AZStickerView_Example */;
+			targetProxy = 1ADB46977D0800498F1979DEDBC9646C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0069338C8F03A2A1F38B5CAD2BB82B2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31D386EC3C42D7A4284658D09B395D62 /* AZStickerView.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AZStickerView/AZStickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AZStickerView/AZStickerView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AZStickerView/AZStickerView.modulemap";
+				PRODUCT_MODULE_NAME = AZStickerView;
+				PRODUCT_NAME = AZStickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -463,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -491,7 +533,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-AZStickerView_Example/Pods-AZStickerView_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AZStickerView_Example/Pods-AZStickerView_Example.modulemap";
@@ -508,9 +550,9 @@
 			};
 			name = Debug;
 		};
-		8BBDF5C1BDC61FECB5D6781A1E9D60FB /* Debug */ = {
+		8E76F983A354A6E2555984E2305DC6FD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 023D3357C5425B5DA72C8E7E56E6DA4B /* AZStickerView.debug.xcconfig */;
+			baseConfigurationReference = F103FE414EB4CA4D767E0B3DD6EE0087 /* AZStickerView.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -523,7 +565,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AZStickerView/AZStickerView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AZStickerView/AZStickerView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/AZStickerView/AZStickerView.modulemap";
 				PRODUCT_MODULE_NAME = AZStickerView;
@@ -533,10 +575,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		9AD706BFD08A26250CF45538C1029338 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -553,7 +596,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-AZStickerView_Tests/Pods-AZStickerView_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AZStickerView_Tests/Pods-AZStickerView_Tests.modulemap";
@@ -564,37 +607,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AB3542631131F0D13C4E42A3B2763A2D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DF3A7726501B7C93475C2B14D52F818 /* AZStickerView.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AZStickerView/AZStickerView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AZStickerView/AZStickerView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AZStickerView/AZStickerView.modulemap";
-				PRODUCT_MODULE_NAME = AZStickerView;
-				PRODUCT_NAME = AZStickerView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -652,12 +664,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -678,7 +691,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-AZStickerView_Tests/Pods-AZStickerView_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AZStickerView_Tests/Pods-AZStickerView_Tests.modulemap";
@@ -710,7 +723,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-AZStickerView_Example/Pods-AZStickerView_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AZStickerView_Example/Pods-AZStickerView_Example.modulemap";
@@ -731,20 +744,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2AFAB0EF300AD8C627319756AA4B8C83 /* Build configuration list for PBXNativeTarget "AZStickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0069338C8F03A2A1F38B5CAD2BB82B2C /* Debug */,
+				8E76F983A354A6E2555984E2305DC6FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
 				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		82F3C80610B9C20F3EED352513860094 /* Build configuration list for PBXNativeTarget "AZStickerView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8BBDF5C1BDC61FECB5D6781A1E9D60FB /* Debug */,
-				AB3542631131F0D13C4E42A3B2763A2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

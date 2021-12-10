@@ -7,26 +7,29 @@
 //
 
 #import "AZViewController.h"
-#import <AZStickerView.h>
+#import <AZStickerManager.h>
 
-@interface AZViewController ()
+
+@interface AZViewController () < AZStickerManagerDataSouce >
 
 @property (nonatomic, strong) IBOutlet UIView *playgroundView;
 
-@property (nonatomic, strong) NSMutableArray<AZStickerView *> *stickerViews;
+@property (nonatomic, strong) AZStickerManager *stickerViewManager;
 
 @end
+
 
 @implementation AZViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-    self.stickerViews = [NSMutableArray new];
-    
     self.playgroundView.layer.borderWidth = 1.0;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
     [self.playgroundView addGestureRecognizer:tapGesture];
+    
+    self.stickerViewManager = [[AZStickerManager alloc] initWithDataSouce:self];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,12 +39,18 @@
 
 
 
+#pragma mark - AZStickerManagerDataSouce
+
+- (UIView *)playgroundViewInStickerManager:(AZStickerManager *)stickerManager {
+    return self.playgroundView;
+}
+
+
+
 #pragma mark - Gesture
 
 - (void)tapGesture:(UITapGestureRecognizer *)recognizer {
-    for (AZStickerView *stickerView in self.stickerViews) {
-        stickerView.editMode = NO;
-    }
+    //
 }
 
 
@@ -50,11 +59,8 @@
 
 - (IBAction)addButtonAction:(UIButton *)sender {
     
-    AZStickerView *stickerView = [[AZStickerView alloc] initWithParentBounds:self.playgroundView.bounds];
-    stickerView.stickerImage = [UIImage systemImageNamed:@"tortoise"];
-    
-    [self.playgroundView addSubview:stickerView];
-    [self.stickerViews addObject:stickerView];
+    UIImage *image = [UIImage systemImageNamed:@"tortoise"];
+    [self.stickerViewManager insertStickerViewWithImage:image];
     
 }
 

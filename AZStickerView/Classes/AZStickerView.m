@@ -69,7 +69,6 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         
         [self setEditMode:NO];
         
-        ///~~~~~~~~~~~~~~~~~~
         CGFloat x = CGRectGetMidX(parentBounds) - (StickerDefaultSizeWidth / 2);
         CGFloat y = CGRectGetMidY(parentBounds) - (StickerDefaultSizeHieght / 2);
         
@@ -78,7 +77,6 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         
         self.parentBounds = parentBounds;
         self.originBounds = self.bounds;
-        ///~~~~~~~~~~~~~~~~~~
         
     }
     
@@ -118,7 +116,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 
 - (void)initControls {
     
-    self.resizeAndRotateView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"arrow.clockwise.circle"]];
+    self.resizeAndRotateView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"arrow.up.left.and.arrow.down.right"]];
     self.resizeAndRotateView.tintColor = UIColor.darkGrayColor;
     self.resizeAndRotateView.userInteractionEnabled = YES;
     [self addSubview:self.resizeAndRotateView];
@@ -149,12 +147,12 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 - (CAShapeLayer *)borderLayer {
     
     if (!_borderLayer) {
-        
+
         _borderLayer = [CAShapeLayer layer];
         _borderLayer.lineWidth = 1.0f;
         _borderLayer.lineDashPattern = @[@(4.0f), @(4.0f)];
-        _borderLayer.strokeColor = [UIColor redColor].CGColor;
-        _borderLayer.fillColor = [UIColor clearColor].CGColor;
+        _borderLayer.strokeColor = UIColor.redColor.CGColor;
+        _borderLayer.fillColor = UIColor.clearColor.CGColor;
         
     }
     
@@ -437,6 +435,11 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 
 
 - (void)deleteTapGesture:(UITapGestureRecognizer *)recognizer {
+    [self remove];
+}
+
+
+- (void)remove {
     
     if (self.willRemoveHandler) {
         self.willRemoveHandler ();
