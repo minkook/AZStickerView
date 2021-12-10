@@ -22,7 +22,7 @@ pod 'AZStickerView'
 
 ## Author
 
-mkyoo, manguksmediawill@gmail.com
+minkook, manguks@gmail.com
 
 ## License
 
