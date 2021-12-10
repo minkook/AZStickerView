@@ -1,5 +1,5 @@
 PODS:
-  - AZStickerView (0.1.0)
+  - AZStickerView (0.2.0)
 
 DEPENDENCIES:
   - AZStickerView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AZStickerView: 4c58c037472ed7588fac4b378c52dc078054f056
+  AZStickerView: caf3efb04c53634cd1488bf5a37073454b292afd
 
 PODFILE CHECKSUM: 050322aea9e4fe31aac9e8a8bc0a8db7bf3b1e5c
 
