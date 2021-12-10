@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## AZStickerView
 
-Copyright (c) 2021 mkyoo <manguksmediawill@gmail.com>
+Copyright (c) 2021 minkook <manguks@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

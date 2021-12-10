@@ -1,6 +1,6 @@
 # AZStickerView
 
-[![CI Status](https://img.shields.io/travis/mkyoo/AZStickerView.svg?style=flat)](https://travis-ci.org/mkyoo/AZStickerView)
+[![CI Status](https://img.shields.io/travis/minkook/AZStickerView.svg?style=flat)](https://travis-ci.org/minkook/AZStickerView)
 [![Version](https://img.shields.io/cocoapods/v/AZStickerView.svg?style=flat)](https://cocoapods.org/pods/AZStickerView)
 [![License](https://img.shields.io/cocoapods/l/AZStickerView.svg?style=flat)](https://cocoapods.org/pods/AZStickerView)
 [![Platform](https://img.shields.io/cocoapods/p/AZStickerView.svg?style=flat)](https://cocoapods.org/pods/AZStickerView)

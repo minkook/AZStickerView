@@ -2,8 +2,8 @@
 //  AZStickerViewTests.m
 //  AZStickerViewTests
 //
-//  Created by mkyoo on 12/10/2021.
-//  Copyright (c) 2021 mkyoo. All rights reserved.
+//  Created by minkook on 12/10/2021.
+//  Copyright (c) 2021 minkook. All rights reserved.
 //
 
 @import XCTest;
