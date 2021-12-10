@@ -24,19 +24,30 @@
                                 <rect key="frame" x="10" y="10" width="355" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0I-nh-LXr">
-                                        <rect key="frame" x="299" y="0.0" width="46" height="48"/>
+                                        <rect key="frame" x="305" y="0.0" width="40" height="48"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Insert"/>
                                         <connections>
-                                            <action selector="addButtonAction:" destination="whP-gf-Uak" eventType="touchUpInside" id="uBG-3a-R41"/>
+                                            <action selector="insertButtonAction:" destination="whP-gf-Uak" eventType="touchUpInside" id="ltY-sg-Htg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqp-gJ-D11">
+                                        <rect key="frame" x="211" y="0.0" width="84" height="48"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="LastRemove"/>
+                                        <connections>
+                                            <action selector="lastRemoveButtonAction:" destination="whP-gf-Uak" eventType="touchUpInside" id="6Q5-qg-FrP"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="s0I-nh-LXr" firstAttribute="leading" secondItem="Sv4-a8-mZi" secondAttribute="leading" priority="249" id="1UR-ee-8Ek"/>
+                                    <constraint firstItem="Nqp-gJ-D11" firstAttribute="top" secondItem="Sv4-a8-mZi" secondAttribute="top" id="E8D-KD-nID"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nqp-gJ-D11" secondAttribute="bottom" id="VEZ-rJ-nlm"/>
+                                    <constraint firstItem="Nqp-gJ-D11" firstAttribute="leading" secondItem="Sv4-a8-mZi" secondAttribute="leading" priority="249" id="bZD-Yj-hju"/>
                                     <constraint firstItem="s0I-nh-LXr" firstAttribute="top" secondItem="Sv4-a8-mZi" secondAttribute="top" id="hMp-Us-lQd"/>
                                     <constraint firstAttribute="bottom" secondItem="s0I-nh-LXr" secondAttribute="bottom" id="koU-k7-gjQ"/>
+                                    <constraint firstItem="s0I-nh-LXr" firstAttribute="leading" secondItem="Nqp-gJ-D11" secondAttribute="trailing" constant="10" id="nOd-6A-knO"/>
                                     <constraint firstAttribute="trailing" secondItem="s0I-nh-LXr" secondAttribute="trailing" constant="10" id="xlV-FU-HtP"/>
                                     <constraint firstAttribute="height" constant="48" id="yh2-m3-PUW"/>
                                 </constraints>

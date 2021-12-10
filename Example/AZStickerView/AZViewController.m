@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) IBOutlet UIView *playgroundView;
 
-@property (nonatomic, strong) AZStickerManager *stickerViewManager;
+@property (nonatomic, strong) AZStickerManager *stickerManager;
 
 @end
 
@@ -25,10 +25,10 @@
     [super viewDidLoad];
 	
     self.playgroundView.layer.borderWidth = 1.0;
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
-    [self.playgroundView addGestureRecognizer:tapGesture];
     
-    self.stickerViewManager = [[AZStickerManager alloc] initWithDataSouce:self];
+    self.stickerManager = [[AZStickerManager alloc] initWithDataSouce:self];
+    self.stickerManager.enablePlaygroundViewResetSelection = YES;
+    self.stickerManager.selectionMode = AZStickerSelectionModeNone;
     
 }
 
@@ -47,20 +47,19 @@
 
 
 
-#pragma mark - Gesture
-
-- (void)tapGesture:(UITapGestureRecognizer *)recognizer {
-    //
-}
-
-
-
 #pragma mark - Button Action
 
-- (IBAction)addButtonAction:(UIButton *)sender {
+- (IBAction)insertButtonAction:(UIButton *)sender {
     
     UIImage *image = [UIImage systemImageNamed:@"tortoise"];
-    [self.stickerViewManager insertStickerViewWithImage:image];
+    [self.stickerManager insertStickerViewWithImage:image];
+    
+}
+
+- (IBAction)lastRemoveButtonAction:(UIButton *)sender {
+    
+    NSUInteger index = self.stickerManager.count - 1;
+    [self.stickerManager removeStickerAtIndex:index];
     
 }
 

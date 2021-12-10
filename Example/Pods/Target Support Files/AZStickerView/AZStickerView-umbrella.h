@@ -11,7 +11,6 @@
 #endif
 
 #import "AZStickerManager.h"
-#import "AZStickerManagerDataSouce.h"
 #import "AZStickerView.h"
 
 FOUNDATION_EXPORT double AZStickerViewVersionNumber;

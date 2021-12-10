@@ -6,9 +6,28 @@
 //
 
 #import "AZStickerView.h"
-#import "AZStickerManagerDataSouce.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
+
+typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
+    AZStickerSelectionModeSingle,
+    AZStickerSelectionModeMultipl,
+    AZStickerSelectionModeNone
+};
+
+
+@class AZStickerManager;
+@protocol AZStickerManagerDataSouce <NSObject>
+
+
+@required
+- (UIView *)playgroundViewInStickerManager:(AZStickerManager *)stickerManager;
+
+
+@end
+
+
 
 @interface AZStickerManager : NSObject
 
@@ -17,10 +36,35 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithDataSouce:(id <AZStickerManagerDataSouce>)dataSouce;
 
 
+/**
+ * stickers total count
+ */
+@property (nonatomic, assign, readonly) NSUInteger count;
+
+/**
+ * default : AZStickerSelectionModeSingle
+ */
+@property (nonatomic, assign) AZStickerSelectionMode selectionMode;
+
+/**
+ * default : NO
+ * YES is playgroundView selected stickers reset.
+ */
+@property (nonatomic, assign) BOOL enablePlaygroundViewResetSelection;
+
+
+
+#pragma mark - Insert
+
 - (NSUInteger)insertStickerViewWithImage:(UIImage *)image;
 
 
-- (void)removeAllSticker;
+
+#pragma mark - Remove
+
+- (void)removeStickerAtIndex:(NSUInteger)index;
+
+- (void)removeAllStickers;
 
 
 @end

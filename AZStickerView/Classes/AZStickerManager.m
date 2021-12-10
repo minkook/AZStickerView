@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSMutableArray <AZStickerView *>*stickers;
 
+@property (nonatomic, strong) UITapGestureRecognizer *playgroundViewTapGesture;
+
 @property (nonatomic, weak, readonly) UIView *playgroundView;
 @property (nonatomic, assign, readonly) CGRect parentBounds;
 
@@ -30,9 +32,12 @@
     self = [super init];
     
     if (self) {
+        
         _dataSouce = dataSouce;
         
         _stickers = [NSMutableArray new];
+        
+        _selectionMode = AZStickerSelectionModeSingle;
         
     }
     
@@ -42,7 +47,7 @@
 
 
 
-#pragma mark - Property
+#pragma mark - Property (Private)
 
 - (UIView *)playgroundView {
     return self.dataSouce ? [self.dataSouce playgroundViewInStickerManager:self] : nil;
@@ -54,7 +59,78 @@
 
 
 
-#pragma mark - Create
+#pragma mark - Property (Public)
+
+- (NSUInteger)count {
+    return self.stickers.count;
+}
+
+- (void)setSelectionMode:(AZStickerSelectionMode)selectionMode {
+    
+    if (_selectionMode == selectionMode) {
+        return;
+    }
+    
+    switch (selectionMode) {
+            
+        case AZStickerSelectionModeSingle:
+        case AZStickerSelectionModeMultipl: {
+            [self enableSelectStickers:YES];
+        }
+            break;
+            
+        case AZStickerSelectionModeNone: {
+            [self enableSelectStickers:NO];
+        }
+            break;
+    }
+    
+    _selectionMode = selectionMode;
+    
+}
+
+- (void)setEnablePlaygroundViewResetSelection:(BOOL)enablePlaygroundViewResetSelection {
+    
+    if (!_playgroundViewTapGesture) {
+        _playgroundViewTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(playgroundViewTapGesture:)];
+        [self.playgroundView addGestureRecognizer:_playgroundViewTapGesture];
+    }
+    
+}
+
+
+
+#pragma mark - Create Sticker
+
+- (AZStickerView *)createSticker:(UIImage *)image {
+    
+    AZStickerView *stickerView = [[AZStickerView alloc] initWithParentBounds:self.parentBounds];
+    stickerView.stickerImage = image;
+    stickerView.enableSelect = self.selectionMode == AZStickerSelectionModeNone ? NO : YES;
+    
+    __weak typeof(self) weakSelf = self;
+    stickerView.willChangeSelectedHandler = ^(BOOL isSelected) {
+        
+        if (isSelected) {
+            [weakSelf resetSelectAllStickers];
+        }
+        else {
+            
+        }
+        
+    };
+    
+    stickerView.didChangeSelectedHandler = ^(BOOL isSelected) {
+        //
+    };
+    
+    return stickerView;
+    
+}
+
+
+
+#pragma mark - Insert
 
 - (NSUInteger)insertStickerViewWithImage:(UIImage *)image {
     
@@ -62,8 +138,7 @@
         return NSNotFound;
     }
     
-    AZStickerView *stickerView = [[AZStickerView alloc] initWithParentBounds:self.parentBounds];
-    stickerView.stickerImage = image;
+    AZStickerView *stickerView = [self createSticker:image];
     
     [self.playgroundView addSubview:stickerView];
     [self.stickers addObject:stickerView];
@@ -75,7 +150,19 @@
 
 #pragma mark - Remove
 
-- (void)removeAllSticker {
+- (void)removeStickerAtIndex:(NSUInteger)index {
+    
+    if (self.stickers.count <= index) {
+        return;
+    }
+    
+    AZStickerView *sticker = self.stickers[index];
+    [sticker remove];
+    [self.stickers removeObjectAtIndex:index];
+    
+}
+
+- (void)removeAllStickers {
     
     for (AZStickerView *sticker in self.stickers) {
         [sticker remove];
@@ -84,5 +171,33 @@
     [self.stickers removeAllObjects];
     
 }
+
+
+
+#pragma mark - Edit
+
+- (void)resetSelectAllStickers {
+    for (AZStickerView *sticker in self.stickers) {
+        sticker.selected = NO;
+    }
+}
+
+- (void)enableSelectStickers:(BOOL)enable {
+    
+    for (AZStickerView *sticker in self.stickers) {
+        sticker.selected = NO;
+        sticker.enableSelect = enable;
+    }
+    
+}
+
+
+
+#pragma mark - Gesture
+
+- (void)playgroundViewTapGesture:(UITapGestureRecognizer *)recognizer {
+    [self resetSelectAllStickers];
+}
+
 
 @end

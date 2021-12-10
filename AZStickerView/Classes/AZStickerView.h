@@ -27,11 +27,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ * default is YES
+ */
+@property (nonatomic, assign) BOOL enableSelect;
+
+
+/**
  default is NO.
- When editMode is activated, the BorderLayer and control function are shown.
+ When selected is activated, the BorderLayer and control function are shown.
  TapGesture changes to YES.
  */
-@property (nonatomic, assign) BOOL editMode;
+@property (nonatomic, assign, getter=isSelected) BOOL selected;
 
 
 /**
@@ -44,10 +50,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- Change EditMode Callback Block. (removeFromSuperview)
+ Change Selected Callback Block.
  */
-@property (nonatomic, copy) void (^willChangeEditModeHandler)(BOOL editMode);
-@property (nonatomic, copy) void (^didChangeEditModeHandler)(BOOL editMode);
+@property (nonatomic, copy) void (^willChangeSelectedHandler)(BOOL isSelected);
+@property (nonatomic, copy) void (^didChangeSelectedHandler)(BOOL isSelected);
 
 
 /**

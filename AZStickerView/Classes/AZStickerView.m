@@ -67,7 +67,8 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         [self initGesture];
         [self initControls];
         
-        [self setEditMode:NO];
+        self.enableSelect = YES;
+        self.selected = NO;
         
         CGFloat x = CGRectGetMidX(parentBounds) - (StickerDefaultSizeWidth / 2);
         CGFloat y = CGRectGetMidY(parentBounds) - (StickerDefaultSizeHieght / 2);
@@ -122,6 +123,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     [self addSubview:self.resizeAndRotateView];
     self.panResizeGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(resizeAndRotateGesture:)];
     [self.resizeAndRotateView addGestureRecognizer:self.panResizeGesture];
+    self.resizeAndRotateView.hidden = YES;
     
     self.deleteView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"multiply.circle.fill"]];
     self.deleteView.tintColor = UIColor.darkGrayColor;
@@ -129,6 +131,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     [self addSubview:self.deleteView];
     self.tapDeleteGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteTapGesture:)];
     [self.deleteView addGestureRecognizer:self.tapDeleteGesture];
+    self.deleteView.hidden = YES;
     
 }
 
@@ -183,19 +186,27 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     
 }
 
-- (void)setEditMode:(BOOL)isEditMode {
+- (void)setSelected:(BOOL)selected {
     
-    if (self.willChangeEditModeHandler) {
-        self.willChangeEditModeHandler(isEditMode);
+    if (!self.enableSelect) {
+        return;
     }
     
-    _editMode = isEditMode;
+    if (_selected == selected) {
+        return;
+    }
     
-    self.deleteView.hidden = !isEditMode;
-    self.resizeAndRotateView.hidden = !isEditMode;
+    if (self.willChangeSelectedHandler) {
+        self.willChangeSelectedHandler(selected);
+    }
     
-    if (self.didChangeEditModeHandler) {
-        self.didChangeEditModeHandler(isEditMode);
+    _selected = selected;
+    
+    self.deleteView.hidden = !selected;
+    self.resizeAndRotateView.hidden = !selected;
+    
+    if (self.didChangeSelectedHandler) {
+        self.didChangeSelectedHandler(selected);
     }
     
 }
@@ -267,13 +278,13 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 #pragma mark - Gesture
 
 - (void)tapGesture:(UITapGestureRecognizer *)recognizer {
-    self.editMode = YES;
+    self.selected = YES;
 }
 
 
 - (void)doubleTapGesture:(UITapGestureRecognizer *)recognizer {
     
-    self.editMode = YES;
+    self.selected = YES;
     
     __weak typeof(self) weakSelf = self;
     
@@ -357,7 +368,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         self.touchBeganTranslateTx = 0.0;
         self.touchBeganTranslateTy = 0.0;
         
-        self.editMode = YES;
+        self.selected = YES;
         
     }
     
