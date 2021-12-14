@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
 
 
 @required
+
 - (UIView *)playgroundViewInStickerManager:(AZStickerManager *)stickerManager;
 
 
@@ -34,6 +35,18 @@ typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithDataSouce:(id <AZStickerManagerDataSouce>)dataSouce;
+
+
+/**
+ * default is nil.
+ */
+@property (nonatomic, strong, nullable) UIImage *deleteImage;
+
+
+/**
+ * default is nil.
+ */
+@property (nonatomic, strong, nullable) UIImage *resizeImage;
 
 
 /**

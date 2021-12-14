@@ -20,6 +20,10 @@
 @property (nonatomic, strong) UIImageView *deleteView;
 @property (nonatomic, strong) UIImageView *resizeAndRotateView;
 
+// Default Image
+@property (nonatomic, strong, readonly) UIImage *defaultDeleteImage;
+@property (nonatomic, strong, readonly) UIImage *defaultResizeImage;
+
 // Gesture
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTapGesture;
@@ -56,7 +60,11 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
 
 @implementation AZStickerView
 
-- (instancetype)initWithParentBounds:(CGRect)parentBounds {
+@synthesize defaultDeleteImage = _defaultDeleteImage, defaultResizeImage = _defaultResizeImage;
+
+- (instancetype)initWithParentBounds:(CGRect)parentBounds
+                         deleteImage:(UIImage * _Nullable)deleteImage
+                         resizeImage:(UIImage * _Nullable)resizeImage {
     
     self = [super init];
     
@@ -65,7 +73,7 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
         [self.layer addSublayer:self.borderLayer];
         
         [self initGesture];
-        [self initControls];
+        [self initControlsWithDeleteImage:deleteImage resizeImage:resizeImage];
         
         self.enableSelect = YES;
         self.selected = NO;
@@ -85,16 +93,6 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     
 }
 
-- (instancetype)initWithParentBounds:(CGRect)parentBounds stickerImage:(UIImage *)stickerImage {
-    
-    self = [self initWithParentBounds:parentBounds];
-    if (self) {
-        self.stickerImage = stickerImage;
-    }
-    
-    return self;
-    
-}
 
 
 #pragma mark - Init
@@ -115,23 +113,22 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     
 }
 
-- (void)initControls {
+- (void)initControlsWithDeleteImage:(UIImage * _Nullable)deleteImage
+                        resizeImage:(UIImage * _Nullable)resizeImage {
     
-    self.resizeAndRotateView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"arrow.up.left.and.arrow.down.right"]];
-    self.resizeAndRotateView.tintColor = UIColor.darkGrayColor;
-    self.resizeAndRotateView.userInteractionEnabled = YES;
-    [self addSubview:self.resizeAndRotateView];
-    self.panResizeGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(resizeAndRotateGesture:)];
-    [self.resizeAndRotateView addGestureRecognizer:self.panResizeGesture];
-    self.resizeAndRotateView.hidden = YES;
-    
-    self.deleteView = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"multiply.circle.fill"]];
-    self.deleteView.tintColor = UIColor.darkGrayColor;
+    self.deleteView = [[UIImageView alloc] initWithImage:deleteImage ? deleteImage : self.defaultDeleteImage];
     self.deleteView.userInteractionEnabled = YES;
     [self addSubview:self.deleteView];
     self.tapDeleteGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteTapGesture:)];
     [self.deleteView addGestureRecognizer:self.tapDeleteGesture];
     self.deleteView.hidden = YES;
+    
+    self.resizeAndRotateView = [[UIImageView alloc] initWithImage:resizeImage ? resizeImage : self.defaultResizeImage];
+    self.resizeAndRotateView.userInteractionEnabled = YES;
+    [self addSubview:self.resizeAndRotateView];
+    self.panResizeGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(resizeAndRotateGesture:)];
+    [self.resizeAndRotateView addGestureRecognizer:self.panResizeGesture];
+    self.resizeAndRotateView.hidden = YES;
     
 }
 
@@ -160,6 +157,95 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     }
     
     return _borderLayer;
+    
+}
+
+- (UIImage *)defaultDeleteImage {
+    
+    if (!_defaultDeleteImage) {
+        
+        CGSize size = CGSizeMake(StickerControlSizeWidth, StickerControlSizeHieght);
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, 0);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        CGRect rect = CGRectMake(0, 0, size.width, size.height);
+        rect = CGRectInset(rect, 1, 1);
+        
+        CGContextSetFillColorWithColor(context, UIColor.whiteColor.CGColor);
+        CGContextSetStrokeColorWithColor(context, UIColor.orangeColor.CGColor);
+        CGContextSetLineWidth(context, 1.0);
+        CGContextAddEllipseInRect(context, rect);
+        
+        CGFloat midX = CGRectGetMidX(rect);
+        CGFloat midY = CGRectGetMidY(rect);
+        CGPoint leftTop = CGPointMake(midX - midX/2, midY - midY/2);
+        CGPoint RightTop = CGPointMake(midX + midX/2, midY - midY/2);
+        CGPoint leftBottom = CGPointMake(midX - midX/2, midY + midY/2);
+        CGPoint rightBottom = CGPointMake(midX + midX/2, midY + midY/2);
+        
+        CGContextMoveToPoint(context, leftTop.x, leftTop.y);
+        CGContextAddLineToPoint(context, rightBottom.x, rightBottom.y);
+        
+        CGContextMoveToPoint(context, RightTop.x, RightTop.y);
+        CGContextAddLineToPoint(context, leftBottom.x, leftBottom.y);
+        
+        CGContextDrawPath(context, kCGPathFillStroke);
+        
+        _defaultDeleteImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+    }
+    
+    return _defaultDeleteImage;
+    
+}
+
+- (UIImage *)defaultResizeImage {
+    
+    if (!_defaultResizeImage) {
+        
+        CGSize size = CGSizeMake(StickerControlSizeWidth, StickerControlSizeHieght);
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, 0);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        CGRect rect = CGRectMake(0, 0, size.width, size.height);
+        rect = CGRectInset(rect, 1, 1);
+        
+        CGContextSetFillColorWithColor(context, UIColor.whiteColor.CGColor);
+        CGContextSetStrokeColorWithColor(context, UIColor.orangeColor.CGColor);
+        CGContextSetLineWidth(context, 1.0);
+        CGContextAddEllipseInRect(context, rect);
+        
+        CGFloat midX = CGRectGetMidX(rect);
+        CGFloat midY = CGRectGetMidY(rect);
+        CGPoint leftTop = CGPointMake(midX - midX/2, midY - midY/2);
+        CGPoint rightBottom = CGPointMake(midX + midX/2, midY + midY/2);
+        
+        CGContextMoveToPoint(context, leftTop.x, leftTop.y);
+        CGContextAddLineToPoint(context, leftTop.x, midY);
+        
+        CGContextMoveToPoint(context, leftTop.x, leftTop.y);
+        CGContextAddLineToPoint(context, midX, leftTop.y);
+        
+        CGContextMoveToPoint(context, leftTop.x, leftTop.y);
+        CGContextAddLineToPoint(context, rightBottom.x, rightBottom.y);
+        
+        CGContextMoveToPoint(context, rightBottom.x, rightBottom.y);
+        CGContextAddLineToPoint(context, rightBottom.x, midY);
+        
+        CGContextMoveToPoint(context, rightBottom.x, rightBottom.y);
+        CGContextAddLineToPoint(context, midX, rightBottom.y);
+        
+        CGContextDrawPath(context, kCGPathFillStroke);
+        
+        _defaultResizeImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+    }
+    
+    return _defaultResizeImage;
     
 }
 

@@ -47,7 +47,7 @@
 
 
 
-#pragma mark - Property (Private)
+#pragma mark - Property (Readonly)
 
 - (UIView *)playgroundView {
     return self.dataSouce ? [self.dataSouce playgroundViewInStickerManager:self] : nil;
@@ -104,7 +104,9 @@
 
 - (AZStickerView *)createSticker:(UIImage *)image {
     
-    AZStickerView *stickerView = [[AZStickerView alloc] initWithParentBounds:self.parentBounds];
+    AZStickerView *stickerView = [[AZStickerView alloc] initWithParentBounds:self.parentBounds
+                                                                 deleteImage:self.deleteImage
+                                                                 resizeImage:self.resizeImage];
     stickerView.stickerImage = image;
     stickerView.enableSelect = self.selectionMode == AZStickerSelectionModeNone ? NO : YES;
     

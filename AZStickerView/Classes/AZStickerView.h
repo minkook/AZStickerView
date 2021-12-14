@@ -16,8 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)coder NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
-- (instancetype)initWithParentBounds:(CGRect)parentBounds;
-- (instancetype)initWithParentBounds:(CGRect)parentBounds stickerImage:(UIImage *)stickerImage;
+- (instancetype)initWithParentBounds:(CGRect)parentBounds
+                         deleteImage:(UIImage * _Nullable)deleteImage
+                         resizeImage:(UIImage * _Nullable)resizeImage;
 
 
 /**

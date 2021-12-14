@@ -28,7 +28,12 @@
     
     self.stickerManager = [[AZStickerManager alloc] initWithDataSouce:self];
     self.stickerManager.enablePlaygroundViewResetSelection = YES;
-    self.stickerManager.selectionMode = AZStickerSelectionModeNone;
+    
+    
+    /* Config */
+//    self.stickerManager.selectionMode = AZStickerSelectionModeNone;
+//    self.stickerManager.deleteImage = [UIImage systemImageNamed:@"multiply.circle.fill"];
+//    self.stickerManager.resizeImage = [UIImage systemImageNamed:@"arrow.up.left.and.arrow.down.right"];
     
 }
 
