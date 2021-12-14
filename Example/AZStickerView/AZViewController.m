@@ -57,7 +57,8 @@
 - (IBAction)insertButtonAction:(UIButton *)sender {
     
     UIImage *image = [UIImage systemImageNamed:@"tortoise"];
-    [self.stickerManager insertStickerViewWithImage:image];
+    NSUInteger index = [self.stickerManager insertStickerViewWithImage:image];
+    [self.stickerManager selectAtIndex:index];
     
 }
 

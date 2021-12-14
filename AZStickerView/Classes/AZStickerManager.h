@@ -67,17 +67,18 @@ typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
 
 
 
-#pragma mark - Insert
+
 
 - (NSUInteger)insertStickerViewWithImage:(UIImage *)image;
 
 
-
-#pragma mark - Remove
-
 - (void)removeStickerAtIndex:(NSUInteger)index;
 
 - (void)removeAllStickers;
+
+
+- (void)selectAtIndex:(NSUInteger)index;
+
 
 
 @end

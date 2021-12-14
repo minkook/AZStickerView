@@ -176,7 +176,16 @@
 
 
 
-#pragma mark - Edit
+#pragma mark - Select
+
+- (void)selectAtIndex:(NSUInteger)index {
+    AZStickerView *sticker = self.stickers[index];
+    if (!sticker) {
+        return;
+    }
+    
+    sticker.selected = YES;
+}
 
 - (void)resetSelectAllStickers {
     for (AZStickerView *sticker in self.stickers) {
