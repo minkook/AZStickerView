@@ -272,6 +272,14 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     
 }
 
+- (void)setDeleteImage:(UIImage *)deleteImage {
+    self.deleteView.image = deleteImage ? deleteImage : self.defaultDeleteImage;
+}
+
+- (void)setResizeImage:(UIImage *)resizeImage {
+    self.resizeAndRotateView.image = resizeImage ? resizeImage : self.defaultResizeImage;
+}
+
 - (void)setSelected:(BOOL)selected {
     
     if (!self.enableSelect) {

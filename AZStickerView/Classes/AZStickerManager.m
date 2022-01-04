@@ -65,6 +65,34 @@
     return self.stickers.count;
 }
 
+- (void)setDeleteImage:(UIImage *)deleteImage {
+    
+    if (_deleteImage == deleteImage) {
+        return;
+    }
+    
+    for (AZStickerView *sticker in self.stickers) {
+        sticker.deleteImage = deleteImage;
+    }
+    
+    _deleteImage = deleteImage;
+    
+}
+
+- (void)setResizeImage:(UIImage *)resizeImage {
+    
+    if (_resizeImage == resizeImage) {
+        return;
+    }
+    
+    for (AZStickerView *sticker in self.stickers) {
+        sticker.resizeImage = resizeImage;
+    }
+    
+    _resizeImage = resizeImage;
+    
+}
+
 - (void)setSelectionMode:(AZStickerSelectionMode)selectionMode {
     
     if (_selectionMode == selectionMode) {

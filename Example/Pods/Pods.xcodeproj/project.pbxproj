@@ -46,24 +46,24 @@
 		0FF13FDAB4D82061866A8722B52C0313 /* Pods-AZStickerView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AZStickerView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		11C598C80EBF9C45A54CE29631135693 /* Pods-AZStickerView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AZStickerView_Example-Info.plist"; sourceTree = "<group>"; };
 		1528FCE92CB21B04881434CD34676B1D /* Pods-AZStickerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AZStickerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		19CF58E67EF803419A4A948BD51F2523 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		28B6D76330E0DF5B2AF4032E23FE806B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		19CF58E67EF803419A4A948BD51F2523 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		28B6D76330E0DF5B2AF4032E23FE806B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		372D7A5EE2C884E0383DE926887FF18F /* AZStickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AZStickerView-umbrella.h"; sourceTree = "<group>"; };
 		3B6F6ECA348CE846D189ACDA22EB1172 /* AZStickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AZStickerView.modulemap; sourceTree = "<group>"; };
 		41EBD43A9301DD74E9A642458C3A8528 /* Pods-AZStickerView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AZStickerView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		447600A4FA41C1B190C4BE1C08B739C0 /* Pods-AZStickerView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AZStickerView_Tests-dummy.m"; sourceTree = "<group>"; };
 		5214E26C6F77D9C4561D1455889E6ADE /* AZStickerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZStickerManager.m; path = AZStickerView/Classes/AZStickerManager.m; sourceTree = "<group>"; };
 		5DB72DADD5987ED7AC85C5CDE6CDD583 /* AZStickerView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AZStickerView.release.xcconfig; sourceTree = "<group>"; };
-		6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AZStickerView; path = AZStickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AZStickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E7452ED296EC379BC99F01C622890A /* AZStickerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZStickerManager.h; path = AZStickerView/Classes/AZStickerManager.h; sourceTree = "<group>"; };
 		685B56AC040C5C6B8FE783D19D6307B2 /* AZStickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZStickerView.h; path = AZStickerView/Classes/AZStickerView.h; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7611CC88C8DF50DE0AA8298991DF2964 /* Pods-AZStickerView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AZStickerView_Tests-Info.plist"; sourceTree = "<group>"; };
-		7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods-AZStickerView_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AZStickerView_Tests"; path = Pods_AZStickerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods_AZStickerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AZStickerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD2A4C9411661F5C069EBFF385C57AC /* Pods-AZStickerView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AZStickerView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		83E69E9935E4AE45C2F7E060F5463E12 /* Pods-AZStickerView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AZStickerView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9160AB8CCD099A4F819930027FFCBFBD /* Pods-AZStickerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AZStickerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A8811BDCB23B1A020D0DAE67B7D18F93 /* AZStickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AZStickerView-prefix.pch"; sourceTree = "<group>"; };
 		A8BF377599D2E82237F25B08553EACDD /* Pods-AZStickerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AZStickerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD351798AEACF5ECB8C6035E0073B03D /* Pods-AZStickerView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AZStickerView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -73,9 +73,9 @@
 		BD58ECC9311D48F4C1C9B890BAB012F1 /* AZStickerView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AZStickerView.debug.xcconfig; sourceTree = "<group>"; };
 		C104AB13CE98066EEB596CE8807D5448 /* Pods-AZStickerView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AZStickerView_Example.modulemap"; sourceTree = "<group>"; };
 		CD22C1E57C901C2F4CD73C499A701DD8 /* AZStickerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AZStickerView-Info.plist"; sourceTree = "<group>"; };
-		DB03C8C9B046EE430286D4A1FDB6B8F1 /* AZStickerView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AZStickerView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DB03C8C9B046EE430286D4A1FDB6B8F1 /* AZStickerView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AZStickerView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DF21A30BF073F8583C33698EDD530C8A /* Pods-AZStickerView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AZStickerView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F2BF304821953FDE9F1D85C54467952F /* Pods-AZStickerView_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AZStickerView_Example"; path = Pods_AZStickerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2BF304821953FDE9F1D85C54467952F /* Pods_AZStickerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AZStickerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,9 +164,9 @@
 		A1D1F61E5920369B7597435BDF774510 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView */,
-				F2BF304821953FDE9F1D85C54467952F /* Pods-AZStickerView_Example */,
-				7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods-AZStickerView_Tests */,
+				6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView.framework */,
+				F2BF304821953FDE9F1D85C54467952F /* Pods_AZStickerView_Example.framework */,
+				7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods_AZStickerView_Tests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 			);
 			name = AZStickerView;
 			productName = AZStickerView;
-			productReference = 6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView */;
+			productReference = 6477E0314ABA32BAC901E17A3795FD0D /* AZStickerView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B91FE99EA66C4CC57D212A24D878D1D6 /* Pods-AZStickerView_Example */ = {
@@ -298,7 +298,7 @@
 			);
 			name = "Pods-AZStickerView_Example";
 			productName = Pods_AZStickerView_Example;
-			productReference = F2BF304821953FDE9F1D85C54467952F /* Pods-AZStickerView_Example */;
+			productReference = F2BF304821953FDE9F1D85C54467952F /* Pods_AZStickerView_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C5D7E5A67AD58372D5D88025BE0401F1 /* Pods-AZStickerView_Tests */ = {
@@ -317,7 +317,7 @@
 			);
 			name = "Pods-AZStickerView_Tests";
 			productName = Pods_AZStickerView_Tests;
-			productReference = 7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods-AZStickerView_Tests */;
+			productReference = 7B173EEA74DE04F7A4D85A4C1C6E41B8 /* Pods_AZStickerView_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -327,7 +327,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1320;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -499,7 +499,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AZStickerView/AZStickerView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AZStickerView/AZStickerView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/AZStickerView/AZStickerView.modulemap";
 				PRODUCT_MODULE_NAME = AZStickerView;
@@ -529,7 +529,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-AZStickerView_Example/Pods-AZStickerView_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AZStickerView_Example/Pods-AZStickerView_Example.modulemap";
@@ -561,7 +561,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-AZStickerView_Tests/Pods-AZStickerView_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AZStickerView_Tests/Pods-AZStickerView_Tests.modulemap";
@@ -634,8 +634,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -656,7 +655,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-AZStickerView_Tests/Pods-AZStickerView_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AZStickerView_Tests/Pods-AZStickerView_Tests.modulemap";
@@ -688,7 +687,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AZStickerView/AZStickerView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AZStickerView/AZStickerView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/AZStickerView/AZStickerView.modulemap";
 				PRODUCT_MODULE_NAME = AZStickerView;
@@ -719,7 +718,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-AZStickerView_Example/Pods-AZStickerView_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AZStickerView_Example/Pods-AZStickerView_Example.modulemap";

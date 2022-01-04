@@ -29,7 +29,6 @@
     self.stickerManager = [[AZStickerManager alloc] initWithDataSouce:self];
     self.stickerManager.enablePlaygroundViewResetSelection = YES;
     
-    
     /* Config */
 //    self.stickerManager.selectionMode = AZStickerSelectionModeNone;
 //    self.stickerManager.deleteImage = [UIImage systemImageNamed:@"multiply.circle.fill"];
@@ -62,10 +61,38 @@
     
 }
 
-- (IBAction)lastRemoveButtonAction:(UIButton *)sender {
+- (IBAction)test2ButtonAction:(UIButton *)sender {
+    
+//    [self removeLastSticker];
+    
+    [self changeControlImage];
+    
+}
+
+- (void)removeLastSticker {
     
     NSUInteger index = self.stickerManager.count - 1;
     [self.stickerManager removeStickerAtIndex:index];
+    
+}
+
+- (void)changeControlImage {
+    
+    // change delete image
+    if (self.stickerManager.deleteImage) {
+        self.stickerManager.deleteImage = nil;
+    }
+    else {
+        self.stickerManager.deleteImage = [UIImage systemImageNamed:@"multiply.circle.fill"];
+    }
+    
+    // change resize image
+    if (self.stickerManager.resizeImage) {
+        self.stickerManager.resizeImage = nil;
+    }
+    else {
+        self.stickerManager.resizeImage = [UIImage systemImageNamed:@"arrow.up.left.and.arrow.down.right"];
+    }
     
 }
 

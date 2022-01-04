@@ -26,6 +26,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, nullable) UIImage *stickerImage;
 
+/**
+ * default is DefaultDeleteImage Layer.
+ */
+@property (nonatomic, strong, nullable) UIImage *deleteImage;
+
+/**
+ * default is DefaultResizeImage Layer.
+ */
+@property (nonatomic, strong, nullable) UIImage *resizeImage;
+
 
 /**
  * default is YES

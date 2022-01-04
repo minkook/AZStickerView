@@ -16,6 +16,11 @@ typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
     AZStickerSelectionModeNone
 };
 
+//--------------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------//
+
+
 
 @class AZStickerManager;
 @protocol AZStickerManagerDataSouce <NSObject>
@@ -28,6 +33,10 @@ typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
 
 @end
 
+//--------------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------//
+
 
 
 @interface AZStickerManager : NSObject
@@ -38,21 +47,21 @@ typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
 
 
 /**
+ * stickers total count
+ */
+@property (nonatomic, assign, readonly) NSUInteger count;
+
+
+/**
  * default is nil.
  */
 @property (nonatomic, strong, nullable) UIImage *deleteImage;
-
 
 /**
  * default is nil.
  */
 @property (nonatomic, strong, nullable) UIImage *resizeImage;
 
-
-/**
- * stickers total count
- */
-@property (nonatomic, assign, readonly) NSUInteger count;
 
 /**
  * default : AZStickerSelectionModeSingle
