@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
     AZStickerSelectionModeSingle,
-    AZStickerSelectionModeMultipl,
+    AZStickerSelectionModeMultiple,
     AZStickerSelectionModeNone
 };
 
@@ -53,6 +53,17 @@ typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
 
 
 /**
+ * available AZStickerSelectionModeSingle.
+ */
+@property (nonatomic, assign) NSUInteger currentSelectedIndex;
+
+/**
+ * available AZStickerSelectionModeMultiple.
+ */
+@property (nonatomic, assign) NSUInteger lastSelectedIndex;
+
+
+/**
  * default is nil.
  */
 @property (nonatomic, strong, nullable) UIImage *deleteImage;
@@ -64,24 +75,26 @@ typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
 
 
 /**
+ * default : YES
+ * YES is playgroundView selected stickers reset.
+ */
+@property (nonatomic, assign, getter=isEnablePlaygroundViewResetSelection) BOOL enablePlaygroundViewResetSelection;
+
+
+/**
  * default : AZStickerSelectionModeSingle
  */
 @property (nonatomic, assign) AZStickerSelectionMode selectionMode;
 
-/**
- * default : NO
- * YES is playgroundView selected stickers reset.
- */
-@property (nonatomic, assign) BOOL enablePlaygroundViewResetSelection;
 
 
-
-
+#pragma mark - Stickers Control
 
 - (NSUInteger)insertStickerViewWithImage:(UIImage *)image;
 
 
 - (void)removeStickerAtIndex:(NSUInteger)index;
+
 
 - (void)removeAllStickers;
 

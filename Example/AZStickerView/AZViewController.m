@@ -27,7 +27,6 @@
     self.playgroundView.layer.borderWidth = 1.0;
     
     self.stickerManager = [[AZStickerManager alloc] initWithDataSouce:self];
-    self.stickerManager.enablePlaygroundViewResetSelection = YES;
     
     /* Config */
 //    self.stickerManager.selectionMode = AZStickerSelectionModeNone;
@@ -65,9 +64,17 @@
     
 //    [self removeLastSticker];
     
-    [self changeControlImage];
+//    [self toggleControlImage];
+    
+//    [self toggleEnablePlaygroundViewResetSelection];
+    
+    [self toggleSelectionMode];
     
 }
+
+
+
+#pragma mark - Test
 
 - (void)removeLastSticker {
     
@@ -76,7 +83,7 @@
     
 }
 
-- (void)changeControlImage {
+- (void)toggleControlImage {
     
     // change delete image
     if (self.stickerManager.deleteImage) {
@@ -93,6 +100,30 @@
     else {
         self.stickerManager.resizeImage = [UIImage systemImageNamed:@"arrow.up.left.and.arrow.down.right"];
     }
+    
+}
+
+- (void)toggleEnablePlaygroundViewResetSelection {
+    self.stickerManager.enablePlaygroundViewResetSelection = !self.stickerManager.isEnablePlaygroundViewResetSelection;
+}
+
+- (void)toggleSelectionMode {
+    
+    AZStickerSelectionMode mode;
+    
+//    switch (self.stickerManager.selectionMode) {
+//        case AZStickerSelectionModeNone: mode = AZStickerSelectionModeSingle; break;
+//        case AZStickerSelectionModeSingle: mode = AZStickerSelectionModeMultiple; break;
+//        case AZStickerSelectionModeMultiple: mode = AZStickerSelectionModeNone; break;
+//    }
+    
+    switch (self.stickerManager.selectionMode) {
+        case AZStickerSelectionModeNone: mode = AZStickerSelectionModeMultiple; break;
+        case AZStickerSelectionModeSingle: mode = AZStickerSelectionModeNone; break;
+        case AZStickerSelectionModeMultiple: mode = AZStickerSelectionModeSingle; break;
+    }
+    
+    self.stickerManager.selectionMode = mode;
     
 }
 
