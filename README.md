@@ -20,6 +20,29 @@ it, simply add the following line to your Podfile:
 pod 'AZStickerView'
 ```
 
+## Usage
+
+Simply set `UICollectionViewLeftAlignedLayout` as the layout object for your collection view either via code:
+
+```objc
+// property
+@property (nonatomic, strong) IBOutlet UIView *playgroundView;
+@property (nonatomic, strong) AZStickerManager *stickerManager;
+
+// create stickerManager
+self.stickerManager = [[AZStickerManager alloc] initWithDataSouce:self];
+
+#pragma mark - AZStickerManagerDataSouce
+- (UIView *)playgroundViewInStickerManager:(AZStickerManager *)stickerManager {
+    return self.playgroundView;
+}
+
+// insert sticker
+UIImage *image = [UIImage systemImageNamed:@"tortoise"];
+NSUInteger index = [self.stickerManager insertStickerViewWithImage:image];
+[self.stickerManager selectAtIndex:index];
+```
+
 ## Author
 
 minkook, manguks@gmail.com
