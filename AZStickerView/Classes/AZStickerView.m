@@ -70,6 +70,10 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     
     if (self) {
         
+        _borderColor = UIColor.redColor;
+        _borderWidth = 1.0;
+        _borderLineDashPattern = nil;
+        
         [self.layer addSublayer:self.borderLayer];
         
         [self initGesture];
@@ -149,15 +153,31 @@ static const CGFloat StickerDefaultSizeHieght = 104.0;
     if (!_borderLayer) {
 
         _borderLayer = [CAShapeLayer layer];
-        _borderLayer.lineWidth = 1.0f;
-        _borderLayer.lineDashPattern = @[@(4.0f), @(4.0f)];
-        _borderLayer.strokeColor = UIColor.redColor.CGColor;
         _borderLayer.fillColor = UIColor.clearColor.CGColor;
         
     }
     
+    _borderLayer.strokeColor = _borderColor.CGColor;
+    _borderLayer.lineWidth = _borderWidth;
+    _borderLayer.lineDashPattern = _borderLineDashPattern;
+    
     return _borderLayer;
     
+}
+
+- (void)setBorderColor:(UIColor *)borderColor {
+    _borderColor = borderColor;
+    [self.borderLayer setNeedsLayout];
+}
+
+- (void)setBorderWidth:(CGFloat)borderWidth {
+    _borderWidth = borderWidth;
+    [self.borderLayer setNeedsLayout];
+}
+
+- (void)setBorderLineDashPattern:(NSArray<NSNumber *> *)borderLineDashPattern {
+    _borderLineDashPattern = borderLineDashPattern;
+    [self.borderLayer setNeedsLayout];
 }
 
 - (UIImage *)defaultDeleteImage {

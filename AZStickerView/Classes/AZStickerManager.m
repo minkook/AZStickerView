@@ -41,6 +41,10 @@
         
         self.enablePlaygroundViewResetSelection = YES;
         
+        _outlineBorderColor = UIColor.blackColor;
+        _outlineBorderWidth = 1.0;
+        _outlineBorderLineDashPattern = @[@(4.0f), @(4.0f)];
+        
     }
     
     return self;
@@ -67,32 +71,12 @@
     return self.stickers.count;
 }
 
-- (void)setDeleteImage:(UIImage *)deleteImage {
-    
-    if (_deleteImage == deleteImage) {
-        return;
-    }
-    
-    for (AZStickerView *sticker in self.stickers) {
-        sticker.deleteImage = deleteImage;
-    }
-    
-    _deleteImage = deleteImage;
-    
+- (void)changeCurrentSelectedIndexFromSticker:(AZStickerView *)sticker {
+    _currentSelectedIndex = sticker ? [self.stickers indexOfObject:sticker] : NSNotFound;
 }
 
-- (void)setResizeImage:(UIImage *)resizeImage {
-    
-    if (_resizeImage == resizeImage) {
-        return;
-    }
-    
-    for (AZStickerView *sticker in self.stickers) {
-        sticker.resizeImage = resizeImage;
-    }
-    
-    _resizeImage = resizeImage;
-    
+- (void)changeLastSelectedIndexFromSticker:(AZStickerView *)sticker {
+    _lastSelectedIndex = sticker ? [self.stickers indexOfObject:sticker] : NSNotFound;
 }
 
 - (void)setEnablePlaygroundViewResetSelection:(BOOL)enablePlaygroundViewResetSelection {
@@ -139,6 +123,80 @@
 
 
 
+#pragma mark - Stickers Design
+
+- (void)setOutlineBorderColor:(UIColor *)outlineBorderColor {
+    
+    if (_outlineBorderColor == outlineBorderColor) {
+        return;
+    }
+    
+    for (AZStickerView *sticker in self.stickers) {
+        sticker.borderColor = outlineBorderColor;
+    }
+    
+    _outlineBorderColor = outlineBorderColor;
+    
+}
+
+- (void)setOutlineBorderWidth:(CGFloat)outlineBorderWidth {
+    
+    if (_outlineBorderWidth == outlineBorderWidth) {
+        return;
+    }
+    
+    for (AZStickerView *sticker in self.stickers) {
+        sticker.borderWidth = outlineBorderWidth;
+    }
+    
+    _outlineBorderWidth = outlineBorderWidth;
+    
+}
+
+- (void)setOutlineBorderLineDashPattern:(NSArray<NSNumber *> *)outlineBorderLineDashPattern {
+    
+    if (_outlineBorderLineDashPattern == outlineBorderLineDashPattern) {
+        return;
+    }
+    
+    for (AZStickerView *sticker in self.stickers) {
+        sticker.borderLineDashPattern = outlineBorderLineDashPattern;
+    }
+    
+    _outlineBorderLineDashPattern = outlineBorderLineDashPattern;
+    
+}
+
+- (void)setDeleteImage:(UIImage *)deleteImage {
+    
+    if (_deleteImage == deleteImage) {
+        return;
+    }
+    
+    for (AZStickerView *sticker in self.stickers) {
+        sticker.deleteImage = deleteImage;
+    }
+    
+    _deleteImage = deleteImage;
+    
+}
+
+- (void)setResizeImage:(UIImage *)resizeImage {
+    
+    if (_resizeImage == resizeImage) {
+        return;
+    }
+    
+    for (AZStickerView *sticker in self.stickers) {
+        sticker.resizeImage = resizeImage;
+    }
+    
+    _resizeImage = resizeImage;
+    
+}
+
+
+
 #pragma mark - Gesture
 
 - (void)playgroundViewTapGesture:(UITapGestureRecognizer *)recognizer {
@@ -155,6 +213,9 @@
                                                                  deleteImage:self.deleteImage
                                                                  resizeImage:self.resizeImage];
     sticker.stickerImage = image;
+    sticker.borderColor = self.outlineBorderColor;
+    sticker.borderWidth = self.outlineBorderWidth;
+    sticker.borderLineDashPattern = self.outlineBorderLineDashPattern;
     sticker.enableSelect = self.selectionMode == AZStickerSelectionModeNone ? NO : YES;
     
     __weak typeof(self) weakSelf = self;
@@ -182,13 +243,19 @@
         
         switch (weakSelf.selectionMode) {
             case AZStickerSelectionModeSingle: {
-                weakSelf.currentSelectedIndex = isSelected ? [weakSelf.stickers indexOfObject:weakSticker] : NSNotFound;
+                
+                if (isSelected) {
+                    [weakSelf changeCurrentSelectedIndexFromSticker:weakSticker];
+                }
+                else {
+                    [weakSelf changeCurrentSelectedIndexFromSticker:nil];
+                }
             }
                 break;
                 
             case AZStickerSelectionModeMultiple: {
                 if (isSelected) {
-                    weakSelf.lastSelectedIndex = [weakSelf.stickers indexOfObject:weakSticker];
+                    [weakSelf changeLastSelectedIndexFromSticker:weakSticker];
                 }
                 else {
                     BOOL isFindSelected = NO;
@@ -199,7 +266,7 @@
                         }
                     }
                     if (!isFindSelected) {
-                        weakSelf.lastSelectedIndex = NSNotFound;
+                        [weakSelf changeLastSelectedIndexFromSticker:nil];
                     }
                 }
             }

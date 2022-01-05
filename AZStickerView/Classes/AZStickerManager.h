@@ -51,28 +51,15 @@ typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
  */
 @property (nonatomic, assign, readonly) NSUInteger count;
 
-
 /**
  * available AZStickerSelectionModeSingle.
  */
-@property (nonatomic, assign) NSUInteger currentSelectedIndex;
+@property (nonatomic, assign, readonly) NSUInteger currentSelectedIndex;
 
 /**
  * available AZStickerSelectionModeMultiple.
  */
-@property (nonatomic, assign) NSUInteger lastSelectedIndex;
-
-
-/**
- * default is nil.
- */
-@property (nonatomic, strong, nullable) UIImage *deleteImage;
-
-/**
- * default is nil.
- */
-@property (nonatomic, strong, nullable) UIImage *resizeImage;
-
+@property (nonatomic, assign, readonly) NSUInteger lastSelectedIndex;
 
 /**
  * default : YES
@@ -85,6 +72,36 @@ typedef NS_ENUM(NSInteger, AZStickerSelectionMode) {
  * default : AZStickerSelectionModeSingle
  */
 @property (nonatomic, assign) AZStickerSelectionMode selectionMode;
+
+
+
+#pragma mark - Stickers Design
+
+/**
+ * default to blackColor.
+ */
+@property (nonatomic, strong, nonnull) UIColor *outlineBorderColor;
+
+/**
+ * default to 1.0.
+ */
+@property (nonatomic, assign) CGFloat outlineBorderWidth;
+
+/**
+ * default to @[@(4.0f), @(4.0f)].
+ */
+@property (nonatomic, strong, nullable) NSArray<NSNumber *> *outlineBorderLineDashPattern;
+
+
+/**
+ * default to nil.
+ */
+@property (nonatomic, strong, nullable) UIImage *deleteImage;
+
+/**
+ * default to nil.
+ */
+@property (nonatomic, strong, nullable) UIImage *resizeImage;
 
 
 

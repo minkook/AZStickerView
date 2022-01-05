@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) AZStickerManager *stickerManager;
 
+@property (nonatomic, assign) NSUInteger lineDashPatternTypeIndex;
+
 @end
 
 
@@ -25,6 +27,7 @@
     [super viewDidLoad];
 	
     self.playgroundView.layer.borderWidth = 1.0;
+    self.lineDashPatternTypeIndex = 0;
     
     self.stickerManager = [[AZStickerManager alloc] initWithDataSouce:self];
     
@@ -68,7 +71,13 @@
     
 //    [self toggleEnablePlaygroundViewResetSelection];
     
-    [self toggleSelectionMode];
+//    [self toggleSelectionMode];
+    
+//    [self toggleOutlineBorderColor];
+    
+//    [self toggleOutlineBorderWidth];
+    
+    [self toggleOutlineBorderLineDashPattern];
     
 }
 
@@ -111,20 +120,78 @@
     
     AZStickerSelectionMode mode;
     
-//    switch (self.stickerManager.selectionMode) {
-//        case AZStickerSelectionModeNone: mode = AZStickerSelectionModeSingle; break;
-//        case AZStickerSelectionModeSingle: mode = AZStickerSelectionModeMultiple; break;
-//        case AZStickerSelectionModeMultiple: mode = AZStickerSelectionModeNone; break;
-//    }
-    
     switch (self.stickerManager.selectionMode) {
-        case AZStickerSelectionModeNone: mode = AZStickerSelectionModeMultiple; break;
-        case AZStickerSelectionModeSingle: mode = AZStickerSelectionModeNone; break;
-        case AZStickerSelectionModeMultiple: mode = AZStickerSelectionModeSingle; break;
+        case AZStickerSelectionModeNone: mode = AZStickerSelectionModeSingle; break;
+        case AZStickerSelectionModeSingle: mode = AZStickerSelectionModeMultiple; break;
+        case AZStickerSelectionModeMultiple: mode = AZStickerSelectionModeNone; break;
     }
     
     self.stickerManager.selectionMode = mode;
     
 }
+
+- (void)toggleOutlineBorderColor {
+    
+    UIColor *color = self.stickerManager.outlineBorderColor;
+    
+    if (color == UIColor.blackColor) {
+        color = UIColor.redColor;
+    }
+    else if (color == UIColor.redColor) {
+        color = UIColor.greenColor;
+    }
+    else if (color == UIColor.greenColor) {
+        color = UIColor.blueColor;
+    }
+    else if (color == UIColor.blueColor) {
+        color = UIColor.purpleColor;
+    }
+    else if (color == UIColor.purpleColor) {
+        color = UIColor.clearColor;
+    }
+    else if (color == UIColor.clearColor) {
+        color = UIColor.blackColor;
+    }
+    
+    self.stickerManager.outlineBorderColor = color;
+    
+}
+
+- (void)toggleOutlineBorderWidth {
+    
+    CGFloat width = self.stickerManager.outlineBorderWidth;
+    
+    if (width < 5) {
+        width += 1;
+    }
+    else {
+        width = 0;
+    }
+    
+    self.stickerManager.outlineBorderWidth = width;
+    
+}
+
+- (void)toggleOutlineBorderLineDashPattern {
+    
+    self.lineDashPatternTypeIndex += 1;
+    
+    if (self.lineDashPatternTypeIndex == 5) {
+        self.lineDashPatternTypeIndex = 0;
+    }
+    
+    NSArray<NSNumber *> *lineDash;
+    switch (self.lineDashPatternTypeIndex) {
+        case 0: lineDash = @[@(4.0f), @(4.0f)]; break;
+        case 1: lineDash = @[@(1.0f), @(1.0f)]; break;
+        case 2: lineDash = @[@(1.0f), @(4.0f)]; break;
+        case 3: lineDash = @[@(4.0f), @(1.0f)]; break;
+        case 4: lineDash = nil; break;
+    }
+    
+    self.stickerManager.outlineBorderLineDashPattern = lineDash;
+    
+}
+
 
 @end

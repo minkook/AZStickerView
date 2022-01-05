@@ -22,29 +22,44 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- * default is nil.
+ * default to redColor.
+ */
+@property (nonatomic, strong, nullable) UIColor *borderColor;
+
+/**
+ * default to 1.0.
+ */
+@property (nonatomic, assign) CGFloat borderWidth;
+
+/**
+ * default to nil.
+ */
+@property (nonatomic, strong, nullable) NSArray<NSNumber *> *borderLineDashPattern;
+
+/**
+ * default to nil.
  */
 @property (nonatomic, strong, nullable) UIImage *stickerImage;
 
 /**
- * default is DefaultDeleteImage Layer.
+ * default to DefaultDeleteImage Layer.
  */
 @property (nonatomic, strong, nullable) UIImage *deleteImage;
 
 /**
- * default is DefaultResizeImage Layer.
+ * default to DefaultResizeImage Layer.
  */
 @property (nonatomic, strong, nullable) UIImage *resizeImage;
 
 
 /**
- * default is YES
+ * default to YES
  */
 @property (nonatomic, assign) BOOL enableSelect;
 
 
 /**
- default is NO.
+ default to NO.
  When selected is activated, the BorderLayer and control function are shown.
  TapGesture changes to YES.
  */
